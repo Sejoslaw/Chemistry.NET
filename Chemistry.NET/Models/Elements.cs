@@ -7,7 +7,7 @@
 namespace Chemistry.NET.Models
 {
     /// <summary>
-    /// Container for known elements.
+    /// Container for known Elements.
     /// </summary>
     public static class Elements
     {
@@ -91,43 +91,43 @@ namespace Chemistry.NET.Models
         public static Element Platinum { get; } = new Element(78, "Pt", "Platinum", 195.078, PhysicalStates.Solid);
         public static Element Plutonium { get; } = new Element(94, "Pu", "Plutonium", 244, PhysicalStates.SyntheticallyPrepared);
         public static Element Polonium { get; } = new Element(84, "Po", "Polonium", 209, PhysicalStates.Solid);
-        public static Element Potassium {get;} = new Element(19, "K", "Potassium", 39.098, PhysicalStates.Solid);
-        public static Element Praseodymium {get;} = new Element(59, "Pr", "Praseodymium", 140.908, PhysicalStates.Solid);
-        public static Element Promethium {get;} = new Element(61, "Pm", "Promethium", 145, PhysicalStates.SyntheticallyPrepared);
-        public static Element Protactinium {get;} = new Element(91, "Pa", "Protactinium", 231.036, PhysicalStates.Solid);
-        public static Element Radium {get;} = new Element(88, "Ra", "Radium", 226, PhysicalStates.Solid);
-        public static Element Radon {get;} = new Element(86, "Rn", "Radon", 222, PhysicalStates.Gas);
-        public static Element Rhenium {get;} = new Element(75, "Re", "Rhenium", 186.207, PhysicalStates.Solid);
-        public static Element Rhodium {get;} = new Element(45, "Rh", "Rhodium", 102.906, PhysicalStates.Solid);
-        public static Element Roentgenium {get;} = new Element(111, "Rg", "Roentgenium", 280, PhysicalStates.SyntheticallyPrepared);
-        public static Element Rubidium {get;} = new Element(37, "Rb", "Rubidium", 85.468, PhysicalStates.Solid);
-        public static Element Ruthenium {get;} = new Element(44, "Ru", "Ruthenium", 101.07, PhysicalStates.Solid);
-        public static Element Rutherfordium {get;} = new Element(104, "Rf", "Rutherfordium", 261, PhysicalStates.SyntheticallyPrepared);
-        public static Element Samarium {get;} = new Element(62, "Sm", "Samarium", 150.36, PhysicalStates.Solid);
-        public static Element Scandium {get;} = new Element(21, "Sc", "Scandium", 44.956, PhysicalStates.Solid);
-        public static Element Seaborgium {get;} = new Element(106, "Sg", "Seaborgium", 266, PhysicalStates.SyntheticallyPrepared);
-        public static Element Selenium {get;} = new Element(34, "Se", "Selenium", 78.96, PhysicalStates.Solid);
-        public static Element Silicon {get;} = new Element(14, "Si", "Silicon", 28.086, PhysicalStates.Solid);
-        public static Element Silver {get;} = new Element(47, "Ag", "Silver", 107.868, PhysicalStates.Solid);
-        public static Element Sodium {get;} = new Element(11, "Na", "Sodium", 22.990, PhysicalStates.Solid);
-        public static Element Strontium {get;} = new Element(38, "Sr", "Strontium", 87.62, PhysicalStates.Solid);
-        public static Element Sulfur {get;} = new Element(16, "S", "Sulfur", 32.066, PhysicalStates.Solid);
-        public static Element Tantalum {get;} = new Element(73, "Ta", "Tantalum", 180.948, PhysicalStates.Solid);
-        public static Element Technetium {get;} = new Element(43, "Tc", "Technetium", 98, PhysicalStates.SyntheticallyPrepared);
-        public static Element Tellurium {get;} = new Element(52, "Te", "Tellurium", 127.60, PhysicalStates.Solid);
-        public static Element Terbium {get;} = new Element(65, "Tb", "Terbium", 158.925, PhysicalStates.Solid);
-        public static Element Thallium {get;} = new Element(81, "Tl", "Thallium", 204.383, PhysicalStates.Solid);
-        public static Element Thorium {get;} = new Element(90, "Th", "Thorium", 232.038, PhysicalStates.Solid);
-        public static Element Thulium {get;} = new Element(69, "Tm", "Thulium", 168.934, PhysicalStates.Solid);
-        public static Element Tin {get;} = new Element(50, "Sn", "Tin", 118.710, PhysicalStates.Solid);
-        public static Element Titanium {get;} = new Element(22, "Ti", "Titanium", 47.867, PhysicalStates.Solid);
-        public static Element Tungsten {get;} = new Element(74, "W", "Tungsten", 183.84, PhysicalStates.Solid);
-        public static Element Uranium {get;} = new Element(92, "U", "Uranium", 238.029, PhysicalStates.Solid);
-        public static Element Vanadium {get;} = new Element(23, "V", "Vanadium", 50.942, PhysicalStates.Solid);
-        public static Element Xenon {get;} = new Element(54, "Xe", "Xenon", 131.29, PhysicalStates.Gas);
-        public static Element Ytterbium {get;} = new Element(70, "Yb", "Ytterbium", 173.04, PhysicalStates.Solid);
-        public static Element Yttrium {get;} = new Element(39, "Y", "Yttrium", 88.906, PhysicalStates.Solid);
-        public static Element Zinc {get;} = new Element(30, "Zn", "Zinc", 65.39, PhysicalStates.Solid);
-        public static Element Zirconium {get;} = new Element(40, "Zr", "Zirconium", 91.224, PhysicalStates.Solid);
+        public static Element Potassium { get; } = new Element(19, "K", "Potassium", 39.098, PhysicalStates.Solid);
+        public static Element Praseodymium { get; } = new Element(59, "Pr", "Praseodymium", 140.908, PhysicalStates.Solid);
+        public static Element Promethium { get; } = new Element(61, "Pm", "Promethium", 145, PhysicalStates.SyntheticallyPrepared);
+        public static Element Protactinium { get; } = new Element(91, "Pa", "Protactinium", 231.036, PhysicalStates.Solid);
+        public static Element Radium { get; } = new Element(88, "Ra", "Radium", 226, PhysicalStates.Solid);
+        public static Element Radon { get; } = new Element(86, "Rn", "Radon", 222, PhysicalStates.Gas);
+        public static Element Rhenium { get; } = new Element(75, "Re", "Rhenium", 186.207, PhysicalStates.Solid);
+        public static Element Rhodium { get; } = new Element(45, "Rh", "Rhodium", 102.906, PhysicalStates.Solid);
+        public static Element Roentgenium { get; } = new Element(111, "Rg", "Roentgenium", 280, PhysicalStates.SyntheticallyPrepared);
+        public static Element Rubidium { get; } = new Element(37, "Rb", "Rubidium", 85.468, PhysicalStates.Solid);
+        public static Element Ruthenium { get; } = new Element(44, "Ru", "Ruthenium", 101.07, PhysicalStates.Solid);
+        public static Element Rutherfordium { get; } = new Element(104, "Rf", "Rutherfordium", 261, PhysicalStates.SyntheticallyPrepared);
+        public static Element Samarium { get; } = new Element(62, "Sm", "Samarium", 150.36, PhysicalStates.Solid);
+        public static Element Scandium { get; } = new Element(21, "Sc", "Scandium", 44.956, PhysicalStates.Solid);
+        public static Element Seaborgium { get; } = new Element(106, "Sg", "Seaborgium", 266, PhysicalStates.SyntheticallyPrepared);
+        public static Element Selenium { get; } = new Element(34, "Se", "Selenium", 78.96, PhysicalStates.Solid);
+        public static Element Silicon { get; } = new Element(14, "Si", "Silicon", 28.086, PhysicalStates.Solid);
+        public static Element Silver { get; } = new Element(47, "Ag", "Silver", 107.868, PhysicalStates.Solid);
+        public static Element Sodium { get; } = new Element(11, "Na", "Sodium", 22.990, PhysicalStates.Solid);
+        public static Element Strontium { get; } = new Element(38, "Sr", "Strontium", 87.62, PhysicalStates.Solid);
+        public static Element Sulfur { get; } = new Element(16, "S", "Sulfur", 32.066, PhysicalStates.Solid);
+        public static Element Tantalum { get; } = new Element(73, "Ta", "Tantalum", 180.948, PhysicalStates.Solid);
+        public static Element Technetium { get; } = new Element(43, "Tc", "Technetium", 98, PhysicalStates.SyntheticallyPrepared);
+        public static Element Tellurium { get; } = new Element(52, "Te", "Tellurium", 127.60, PhysicalStates.Solid);
+        public static Element Terbium { get; } = new Element(65, "Tb", "Terbium", 158.925, PhysicalStates.Solid);
+        public static Element Thallium { get; } = new Element(81, "Tl", "Thallium", 204.383, PhysicalStates.Solid);
+        public static Element Thorium { get; } = new Element(90, "Th", "Thorium", 232.038, PhysicalStates.Solid);
+        public static Element Thulium { get; } = new Element(69, "Tm", "Thulium", 168.934, PhysicalStates.Solid);
+        public static Element Tin { get; } = new Element(50, "Sn", "Tin", 118.710, PhysicalStates.Solid);
+        public static Element Titanium { get; } = new Element(22, "Ti", "Titanium", 47.867, PhysicalStates.Solid);
+        public static Element Tungsten { get; } = new Element(74, "W", "Tungsten", 183.84, PhysicalStates.Solid);
+        public static Element Uranium { get; } = new Element(92, "U", "Uranium", 238.029, PhysicalStates.Solid);
+        public static Element Vanadium { get; } = new Element(23, "V", "Vanadium", 50.942, PhysicalStates.Solid);
+        public static Element Xenon { get; } = new Element(54, "Xe", "Xenon", 131.29, PhysicalStates.Gas);
+        public static Element Ytterbium { get; } = new Element(70, "Yb", "Ytterbium", 173.04, PhysicalStates.Solid);
+        public static Element Yttrium { get; } = new Element(39, "Y", "Yttrium", 88.906, PhysicalStates.Solid);
+        public static Element Zinc { get; } = new Element(30, "Zn", "Zinc", 65.39, PhysicalStates.Solid);
+        public static Element Zirconium { get; } = new Element(40, "Zr", "Zirconium", 91.224, PhysicalStates.Solid);
     }
 }
