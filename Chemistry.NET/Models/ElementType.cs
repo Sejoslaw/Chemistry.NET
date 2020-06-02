@@ -7,9 +7,9 @@
 namespace Chemistry.NET.Models
 {
     /// <summary>
-    /// Describes the state of an Element.
+    /// Describes the type of an Element.
     /// </summary>
-    public partial class PhysicalState
+    public partial class ElementType
     {
     }
 }

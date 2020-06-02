@@ -32,18 +32,24 @@ namespace Chemistry.NET.Models
         /// <value></value>
         public double AtomicWeight { get; }
         /// <summary>
-        /// Physical state of the element at 20 C (68 F)
+        /// Physical state of the element at 20 C (68 F).
         /// </summary>
         /// <value></value>
         public PhysicalState PhysicalState { get; }
+        /// <summary>
+        /// Type of the element.
+        /// </summary>
+        /// <value></value>
+        public ElementType ElementType { get; }
 
-        public Element(int atomicNumber, string symbol, string name, double atomicWeight, PhysicalState physicalState) // TODO: electron configuration
+        public Element(int atomicNumber, string symbol, string name, double atomicWeight, PhysicalState physicalState, ElementType elementType) // TODO: electron configuration
         {
             AtomicNumber = atomicNumber;
             Symbol = symbol;
             Name = name;
             AtomicWeight = atomicWeight;
             PhysicalState = physicalState;
+            ElementType = elementType;
         }
     }
 }
