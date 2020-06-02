@@ -16,5 +16,7 @@ namespace Chemistry.NET.Models
         public static PhysicalState Gas { get; } = new PhysicalState();
         public static PhysicalState Plasma { get; } = new PhysicalState();
         public static PhysicalState SyntheticallyPrepared { get; } = new PhysicalState();
+        public static PhysicalState ExpectedToBeASolid { get; } = new PhysicalState();
+        public static PhysicalState ExpectedToBeAGas { get; } = new PhysicalState();
     }
 }

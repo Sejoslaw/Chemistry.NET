@@ -11,45 +11,49 @@ namespace Chemistry.NET.Models
     /// </summary>
     public partial class Element
     {
-        /// <summary>
-        /// Atomic number of the element.
-        /// </summary>
-        /// <value></value>
         public int AtomicNumber { get; }
-        /// <summary>
-        /// Symbol of the element.
-        /// </summary>
-        /// <value></value>
         public string Symbol { get; }
-        /// <summary>
-        /// Fullname of the element.
-        /// </summary>
-        /// <value></value>
         public string Name { get; }
-        /// <summary>
-        /// Atomic weight of the element.
-        /// </summary>
-        /// <value></value>
-        public double AtomicWeight { get; }
-        /// <summary>
-        /// Physical state of the element at 20 C (68 F).
-        /// </summary>
-        /// <value></value>
-        public PhysicalState PhysicalState { get; }
-        /// <summary>
-        /// Type of the element.
-        /// </summary>
-        /// <value></value>
-        public ElementType ElementType { get; }
+        public double AtomicMass { get; }
+        public string ColorHex { get; }
+        public string ElectronConfiguration { get; }
+        public string Electronegativity { get; }
+        public string AtomicRadius { get; }
+        public string IonizationEnergy { get; }
+        public string ElectronAffinity { get; }
+        public string OxidationStates { get; }
+        public PhysicalState StandardState { get; }
+        public string MeltingPoint { get; }
+        public string BoilingPoint { get; }
+        public string Density { get; }
+        public ElementType GroupBlock { get; }
+        public int YearDiscovered { get; }
 
-        public Element(int atomicNumber, string symbol, string name, double atomicWeight, PhysicalState physicalState, ElementType elementType) // TODO: electron configuration
+        public Element(
+            int atomicNumber, string symbol, string name, 
+            double atomicMass, string colorHex, string electronConfiguration, 
+            string electronegativity, string atomicRadius, string ionizationEnergy, 
+            string electronAffinity, string oxidationStates, PhysicalState standardState, 
+            string meltingPoint, string boilingPoint, string density, 
+            ElementType groupBlock, int yearDiscovered)
         {
             AtomicNumber = atomicNumber;
             Symbol = symbol;
             Name = name;
-            AtomicWeight = atomicWeight;
-            PhysicalState = physicalState;
-            ElementType = elementType;
+            AtomicMass = atomicMass;
+            ColorHex = colorHex;
+            ElectronConfiguration = electronConfiguration;
+            Electronegativity = electronegativity;
+            AtomicRadius = atomicRadius;
+            IonizationEnergy = ionizationEnergy;
+            ElectronAffinity = electronAffinity;
+            OxidationStates = oxidationStates;
+            StandardState = standardState;
+            MeltingPoint = meltingPoint;
+            BoilingPoint = boilingPoint;
+            Density = density;
+            GroupBlock = groupBlock;
+            YearDiscovered = yearDiscovered;
         }
     }
 }

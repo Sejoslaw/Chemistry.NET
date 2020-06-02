@@ -12,14 +12,15 @@ namespace Chemistry.NET.Models
     public static class ElementTypes
     {
         public static ElementType AlkaliMetal { get; } = new ElementType();
-        public static ElementType AlkalineEarth { get; } = new ElementType();
+        public static ElementType AlkalineEarthMetal { get; } = new ElementType();
         public static ElementType TransitionMetal { get; } = new ElementType();
         public static ElementType BasicMetal { get; } = new ElementType();
         public static ElementType Metalloid { get; } = new ElementType();
-        public static ElementType NonMetal { get; } = new ElementType();
+        public static ElementType Nonmetal { get; } = new ElementType();
         public static ElementType Halogen { get; } = new ElementType();
         public static ElementType NobleGas { get; } = new ElementType();
         public static ElementType Lanthanide { get; } = new ElementType();
         public static ElementType Actinide { get; } = new ElementType();
+        public static ElementType PostTransitionMetal { get; } = new ElementType();
     }
 }
