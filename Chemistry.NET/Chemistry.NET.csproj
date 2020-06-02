@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>https://github.com/Sejoslaw/Chemistry.NET</Copyright>
+    <PackageProjectUrl>https://github.com/Sejoslaw/Chemistry.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Sejoslaw/Chemistry.NET</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/Sejoslaw/Chemistry.NET</PackageLicenseUrl>
+    <Authors>Krzysztof Dobrzyński</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
