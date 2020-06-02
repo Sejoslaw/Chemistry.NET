@@ -9,7 +9,7 @@ namespace Chemistry.NET.Models
     /// <summary>
     /// Definition of a standard element.
     /// </summary>
-    public class Element
+    public partial class Element
     {
         /// <summary>
         /// Atomic number of the element.

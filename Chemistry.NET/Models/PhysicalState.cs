@@ -9,7 +9,7 @@ namespace Chemistry.NET.Models
     /// <summary>
     /// Describes the state of matter.
     /// </summary>
-    public class PhysicalState
+    public partial class PhysicalState
     {
     }
 }

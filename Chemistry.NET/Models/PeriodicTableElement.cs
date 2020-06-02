@@ -9,7 +9,7 @@ namespace Chemistry.NET.Models
     /// <summary>
     /// Definition of an element inside a Periodic Table.
     /// </summary>
-    public class PeriodicTableElement
+    public partial class PeriodicTableElement
     {
         /// <summary>
         /// Element inside Periodic Table.

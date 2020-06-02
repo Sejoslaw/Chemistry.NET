@@ -9,7 +9,7 @@ namespace Chemistry.NET.Models
     /// <summary>
     /// Group on Periodic Table.
     /// </summary>
-    public class PeriodicTableGroup
+    public partial class PeriodicTableGroup
     {
     }
 }
