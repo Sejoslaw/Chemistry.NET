@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System.Collections.Generic;
+
 namespace Chemistry.NET.Models
 {
     /// <summary>
@@ -11,6 +13,27 @@ namespace Chemistry.NET.Models
     /// </summary>
     public partial class Element
     {
+        private static List<Element> _all;
+        public static IEnumerable<Element> All
+        {
+            get
+            {
+                if (_all != null)
+                {
+                    return _all;
+                }
+
+                _all = new List<Element>();
+
+                foreach (var property in typeof(Elements).GetFields())
+                {
+                    _all.Add(property.GetValue(null) as Element);
+                }
+
+                return _all.AsReadOnly();
+            }
+        }
+
         public int AtomicNumber { get; }
         public string Symbol { get; }
         public string Name { get; }
@@ -30,11 +53,11 @@ namespace Chemistry.NET.Models
         public int YearDiscovered { get; }
 
         public Element(
-            int atomicNumber, string symbol, string name, 
-            double atomicMass, string colorHex, ElectronConfiguration electronConfiguration, 
-            string electronegativity, string atomicRadius, string ionizationEnergy, 
-            string electronAffinity, string oxidationStates, PhysicalState standardState, 
-            string meltingPoint, string boilingPoint, string density, 
+            int atomicNumber, string symbol, string name,
+            double atomicMass, string colorHex, ElectronConfiguration electronConfiguration,
+            string electronegativity, string atomicRadius, string ionizationEnergy,
+            string electronAffinity, string oxidationStates, PhysicalState standardState,
+            string meltingPoint, string boilingPoint, string density,
             ElementType groupBlock, int yearDiscovered)
         {
             AtomicNumber = atomicNumber;

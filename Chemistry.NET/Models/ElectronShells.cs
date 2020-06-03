@@ -13,13 +13,13 @@ namespace Chemistry.NET.Models
     {
         // Subshells
 
-        public static ElectronSubShell SubShell_S { get; } = new ElectronSubShell("s", 0);
-        public static ElectronSubShell SubShell_P { get; } = new ElectronSubShell("p", 1);
-        public static ElectronSubShell SubShell_D { get; } = new ElectronSubShell("d", 2);
-        public static ElectronSubShell SubShell_F { get; } = new ElectronSubShell("f", 3);
-        public static ElectronSubShell SubShell_G { get; } = new ElectronSubShell("g", 4);
-        public static ElectronSubShell SubShell_H { get; } = new ElectronSubShell("h", 5);
-        public static ElectronSubShell SubShell_I { get; } = new ElectronSubShell("i", 6);
+        public static ElectronShell SubShell_S { get; } = new ElectronSubShell("s", 0);
+        public static ElectronShell SubShell_P { get; } = new ElectronSubShell("p", 1);
+        public static ElectronShell SubShell_D { get; } = new ElectronSubShell("d", 2);
+        public static ElectronShell SubShell_F { get; } = new ElectronSubShell("f", 3);
+        public static ElectronShell SubShell_G { get; } = new ElectronSubShell("g", 4);
+        public static ElectronShell SubShell_H { get; } = new ElectronSubShell("h", 5);
+        public static ElectronShell SubShell_I { get; } = new ElectronSubShell("i", 6);
 
         // Shells
 
