@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -13,6 +14,16 @@ namespace Chemistry.NET.Tools.ElementsGenerator
         private const string Url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON/?response_type=display";
 
         private static Data Model { get; set; }
+
+        private static IDictionary<string, string> ElectronConfigurations = new Dictionary<string, string>
+        {
+            { "[He]", "1s2 " },
+            { "[Ne]", "1s2 2s2 2p6 " },
+            { "[Ar]", "1s2 2s2 2p6 3s2 3p6 " },
+            { "[Kr]", "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 " },
+            { "[Xe]", "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 " },
+            { "[Rn]", "1s2 2s2 2p6 3s2 3p6 4s2 3d10 4p6 5s2 4d10 5p6 6s2 4f14 5d10 6p6 " },
+        };
 
         static async Task Main(string[] args)
         {
@@ -62,8 +73,8 @@ namespace Chemistry.NET.Models
 ");
 
             string fileContent = builder.ToString();
-            File.Delete("Elements");
-            File.WriteAllText("Elements", fileContent);
+            File.Delete("Elements.data");
+            File.WriteAllText("Elements.data", fileContent);
         }
 
         static void AppendElements(StringBuilder builder)
@@ -90,7 +101,7 @@ namespace Chemistry.NET.Models
 
             row += GetNumber(data, 3);
             row += GetValue(data, 4);
-            row += GetValue(data, 5);
+            row += GetElementElectronConfiguration(data, 5);
 
             row += GetValue(data, 6);
             row += GetValue(data, 7);
@@ -112,7 +123,7 @@ namespace Chemistry.NET.Models
             return row;
         }
 
-        private static string GetNumber(string[] data, int i, bool addComma = true)
+        static string GetNumber(string[] data, int i, bool addComma = true)
         {
             var value = data[i];
 
@@ -151,6 +162,29 @@ namespace Chemistry.NET.Models
             var value = data[i];
             var parsed = string.IsNullOrWhiteSpace(value) ? "\"\", " : $"\"{ value }\", ";
             return parsed;
+        }
+
+        static string GetElementElectronConfiguration(string[] data, int i)
+        {
+            var line = "new ElementElectronConfiguration(\"";
+
+            string config = data[i];
+            
+            foreach(var electronConfiguration in ElectronConfigurations)
+            {
+                if (config.Contains(electronConfiguration.Key))
+                {
+                    config = config.Replace(electronConfiguration.Key, electronConfiguration.Value);
+                    break;
+                }
+            }
+
+            config = config.Replace(" (calculated)", "").Replace(" (predicted)", "");
+
+            line += config;
+            line += "\"), ";
+
+            return line;
         }
     }
 }
