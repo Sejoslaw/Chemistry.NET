@@ -11,6 +11,12 @@ namespace Chemistry.NET.Models
     public partial class ElectronShell
     {
         public string ShellName { get; }
+        /// <summary>
+        /// Quantum number 'n' user when ordering shells.
+        /// For shells it starts with '1'
+        /// For subshells it starts with '0'
+        /// </summary>
+        /// <value></value>
         public int QuantumNumber { get; }
         public ElectronSubShell[] SubShells { get; internal set; }
 
