@@ -16,7 +16,7 @@ namespace Chemistry.NET.Models
         public string Name { get; }
         public double AtomicMass { get; }
         public string ColorHex { get; }
-        public ElementElectronConfiguration ElectronConfiguration { get; }
+        public ElectronConfiguration ElectronConfiguration { get; }
         public string Electronegativity { get; }
         public string AtomicRadius { get; }
         public string IonizationEnergy { get; }
@@ -31,7 +31,7 @@ namespace Chemistry.NET.Models
 
         public Element(
             int atomicNumber, string symbol, string name, 
-            double atomicMass, string colorHex, ElementElectronConfiguration electronConfiguration, 
+            double atomicMass, string colorHex, ElectronConfiguration electronConfiguration, 
             string electronegativity, string atomicRadius, string ionizationEnergy, 
             string electronAffinity, string oxidationStates, PhysicalState standardState, 
             string meltingPoint, string boilingPoint, string density, 

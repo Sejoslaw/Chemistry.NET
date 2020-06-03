@@ -166,7 +166,7 @@ namespace Chemistry.NET.Models
 
         static string GetElementElectronConfiguration(string[] data, int i)
         {
-            var line = "new ElementElectronConfiguration(\"";
+            var line = "new ElectronConfiguration(\"";
 
             string config = data[i];
             

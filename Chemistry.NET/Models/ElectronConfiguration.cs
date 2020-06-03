@@ -9,11 +9,11 @@ namespace Chemistry.NET.Models
     /// <summary>
     /// Contains the information of the electron configuration of a specified Element.
     /// </summary>
-    public partial class ElementElectronConfiguration
+    public partial class ElectronConfiguration
     {
         public string Configuration { get; }
 
-        public ElementElectronConfiguration(string configuration)
+        public ElectronConfiguration(string configuration)
         {
             Configuration = configuration;
         }

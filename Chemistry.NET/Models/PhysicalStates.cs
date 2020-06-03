@@ -7,7 +7,7 @@
 namespace Chemistry.NET.Models
 {
     /// <summary>
-    /// Container for common (known) physical states of matter.
+    /// Container for known physical states of matter.
     /// </summary>
     public static class PhysicalStates
     {
