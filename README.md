@@ -4,7 +4,7 @@
 **Chemistry.NET** is a library which gives You a set of models and tools to play with. They relates to chemistry, atoms, elements, compounds, isotopes and many more.
 
 ### 1.1. Core Models
-As for now there are a couple of models which contains informations used when describing elemens. Those models are:
+As for now there are a couple of models which contains information used when describing elements. Those models are:
   - [Element](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Element.cs), see [Elements](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Elements.cs)
   - [Element Shells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronShell.cs) and [Subshells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronSubShell.cs), see [ElectronShells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronShells.cs)
   - [ElementType](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementType.cs), see [ElementTypes](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementTypes.cs)
