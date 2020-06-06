@@ -93,7 +93,7 @@ namespace Chemistry.NET.Models
 
         static string PrepareLine(string row, string[] data, StringBuilder builder)
         {
-            row += $"public static Element { data[2] } = new Element(";
+            row += "public static Element " + data[2] + " { get; } = new Element(";
 
             row += GetNumber(data, 0);
             row += GetValue(data, 1);

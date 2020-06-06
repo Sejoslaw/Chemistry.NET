@@ -45,7 +45,7 @@ namespace Chemistry.NET.Parsers
             if (shellData == null)
             {
                 shellData = new ElectronShellData();
-                shellData.Shell = ElectronShell.All.FirstOrDefault(s => s.QuantumNumber.ToString().Equals(shellChar) && char.IsUpper(s.ShellName[0]));
+                shellData.Shell = Container.ElectronShells.FirstOrDefault(s => s.QuantumNumber.ToString().Equals(shellChar) && char.IsUpper(s.ShellName[0]));
 
                 subshells.Add(shellData);
             }
@@ -53,7 +53,7 @@ namespace Chemistry.NET.Parsers
             // Subshell
 
             var subshellChar = subshellDef[1].ToString();
-            var subshell = ElectronShell.All.FirstOrDefault(s => s.ShellName.Equals(subshellChar)) as ElectronSubShell;
+            var subshell = Container.ElectronShells.FirstOrDefault(s => s.ShellName.Equals(subshellChar)) as ElectronSubShell;
 
             // Number Of Electrons
 

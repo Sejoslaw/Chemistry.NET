@@ -4,8 +4,6 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using System.Collections.Generic;
-
 namespace Chemistry.NET.Models
 {
     /// <summary>
@@ -13,27 +11,6 @@ namespace Chemistry.NET.Models
     /// </summary>
     public partial class ElectronShell
     {
-        private static List<ElectronShell> _all;
-        public static IEnumerable<ElectronShell> All
-        {
-            get
-            {
-                if (_all != null)
-                {
-                    return _all;
-                }
-
-                _all = new List<ElectronShell>();
-
-                foreach (var property in typeof(ElectronShells).GetProperties())
-                {
-                    _all.Add(property.GetValue(null) as ElectronShell);
-                }
-
-                return _all.AsReadOnly();
-            }
-        }
-
         public string ShellName { get; }
         /// <summary>
         /// Quantum number 'n' user when ordering shells.
