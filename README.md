@@ -7,9 +7,10 @@
 As for now there are a couple of models which contains information used when describing elements. Those models are:
   - [Element](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Element.cs), see [Elements](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Elements.cs)
   - [Element Shells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronShell.cs) and [Subshells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronSubShell.cs), see [ElectronShells](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElectronShells.cs)
-  - [ElementType](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementType.cs), see [ElementTypes](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementTypes.cs)
-  - [PhysicalState](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/PhysicalState.cs), see [PhysicalStates](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/PhysicalStates.cs)
+  - [Element Type](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementType.cs), see [Element Types](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementTypes.cs)
+  - [Physical State](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/PhysicalState.cs), see [Physical States](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/PhysicalStates.cs)
   - [Particles](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Particles/Particles.cs)
+  - [Element Structure](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementStructure.cs), see [Element Structures](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementStructures.cs)
 
 ## 2. Projects
 
