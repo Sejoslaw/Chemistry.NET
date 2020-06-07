@@ -16,6 +16,17 @@
             "stopAtEntry": false
         },
         {
+            "name": "Chemistry.NET.Tools.ElementStructureGenerator - launch",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "elementStructureGenerator-build",
+            "program": "${workspaceFolder}/Tools/Chemistry.NET.Tools.ElementStructureGenerator/bin/Debug/netcoreapp3.1/Chemistry.NET.Tools.ElementStructureGenerator.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Tools/Chemistry.NET.Tools.ElementStructureGenerator",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
             "name": "Chemistry.NET.Tests - launch",
             "type": "coreclr",
             "request": "launch",

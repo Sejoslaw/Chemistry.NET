@@ -4,7 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Tools.ElementsGenerator
+namespace Chemistry.NET.Tools.ElementStructureGenerator
 {
     public class Data
     {

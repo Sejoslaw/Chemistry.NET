@@ -28,6 +28,7 @@ namespace Chemistry.NET.Models
         public string Density { get; }
         public ElementType GroupBlock { get; }
         public int YearDiscovered { get; }
+        public ElementStructure Structure { get; }
 
         public Element(
             int atomicNumber, string symbol, string name,
@@ -35,7 +36,7 @@ namespace Chemistry.NET.Models
             string electronegativity, string atomicRadius, string ionizationEnergy,
             string electronAffinity, string oxidationStates, PhysicalState standardState,
             string meltingPoint, string boilingPoint, string density,
-            ElementType groupBlock, int yearDiscovered)
+            ElementType groupBlock, int yearDiscovered, ElementStructure structure)
         {
             AtomicNumber = atomicNumber;
             Symbol = symbol;
@@ -54,6 +55,7 @@ namespace Chemistry.NET.Models
             Density = density;
             GroupBlock = groupBlock;
             YearDiscovered = yearDiscovered;
+            Structure = structure;
         }
     }
 }

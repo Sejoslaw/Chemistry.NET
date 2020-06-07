@@ -1,4 +1,10 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Krzysztof Dobrzyński
+/// Project: Chemistry.NET
+/// Source: https://github.com/Sejoslaw/Chemistry.NET
+/// </summary>
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -116,11 +122,17 @@ namespace Chemistry.NET.Models
             row += GetValue(data, 14);
 
             row += GetEnum(data, 15, "ElementTypes");
-            row += GetNumber(data, 16, false);
+            row += GetNumber(data, 16);
+            row += GetElementStructure(data);
 
             row += ");" + Environment.NewLine;
 
             return row;
+        }
+
+        private static string GetElementStructure(string[] data)
+        {
+            return $"ElementStructures.{ data[2] }";
         }
 
         static string GetNumber(string[] data, int i, bool addComma = true)
@@ -179,7 +191,7 @@ namespace Chemistry.NET.Models
                 }
             }
 
-            config = config.Replace(" (calculated)", "").Replace(" (predicted)", "");
+            config = config.Replace(" (calculated)", "").Replace(" (predicted)", "").Replace("  ", " ");
 
             line += config;
             line += "\"), ";

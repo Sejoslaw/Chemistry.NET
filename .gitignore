@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # Tools files
-Tools/Chemistry.NET.Tools.ElementsGenerator/*.data
+*.data

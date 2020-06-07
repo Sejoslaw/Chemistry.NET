@@ -19,6 +19,7 @@ namespace Chemistry.NET.Models
         public static IEnumerable<PeriodicTableElement> PeriodicTableElements { get; } = GetAll<PeriodicTableElement>(typeof(PeriodicTable));
         public static IEnumerable<PeriodicTableGroup> PeriodicTableGroups { get; } = GetAll<PeriodicTableGroup>(typeof(PeriodicTableGroups));
         public static IEnumerable<PhysicalState> PhysicalStates { get; } = GetAll<PhysicalState>(typeof(PhysicalStates));
+        public static IEnumerable<ElementStructure> ElementStructures { get; } = GetAll<ElementStructure>(typeof(ElementStructures));
 
         private static IEnumerable<TModel> GetAll<TModel>(Type type)
         {
