@@ -33,24 +33,24 @@ namespace Chemistry.NET.Models.Particles
 
         // Leptons
 
-        public static Lepton Electron { get; } = new Lepton("Electron", "e-", 0.511 * MeV, -1, 1 / 2, 1);
-        public static Lepton Positron { get; } = new Lepton("Positron", "e+", 0.511 * MeV, 1, 1 / 2, 1);
-        public static Lepton Muon { get; } = new Lepton("Muon", "μ-", 105.66 * MeV, -1, 1 / 2, 2);
-        public static Lepton AntiMuon { get; } = new Lepton("Anti Muon", "μ+", 105.66 * MeV, 1, 1 / 2, 2);
-        public static Lepton Tau { get; } = new Lepton("Tau", "τ-", 1.7768 * GeV, -1, 1 / 2, 3);
-        public static Lepton AntiTau { get; } = new Lepton("Anti Tau", "τ+", 1.7768 * GeV, 1, 1 / 2, 3);
+        public static Lepton Electron { get; } = new Lepton("Electron", "e-", 0.511 * MeV, -1, 1 / 2, 1, 1, 0, 0);
+        public static Lepton Positron { get; } = new Lepton("Positron", "e+", 0.511 * MeV, 1, 1 / 2, 1, -1, 0, 0);
+        public static Lepton Muon { get; } = new Lepton("Muon", "μ-", 105.66 * MeV, -1, 1 / 2, 2, 0, 1, 0);
+        public static Lepton AntiMuon { get; } = new Lepton("Anti Muon", "μ+", 105.66 * MeV, 1, 1 / 2, 2, 0, -1, 0);
+        public static Lepton Tau { get; } = new Lepton("Tau", "τ-", 1.7768 * GeV, -1, 1 / 2, 3, 0, 0, 1);
+        public static Lepton AntiTau { get; } = new Lepton("Anti Tau", "τ+", 1.7768 * GeV, 1, 1 / 2, 3, 0, 0, -1);
 
         // Neutrino
 
-        public static Neutrino ElectronNeutrino { get; } = new Neutrino("Electron Neutrino", "νe", 1.0 * eV, 0, 1 / 2, 1);
-        public static Neutrino MuonNeutrino { get; } = new Neutrino("Muon Neutrino", "νμ", 0.17 * MeV, 0, 1 / 2, 2);
-        public static Neutrino TauNeutrino { get; } = new Neutrino("Tau Neutrino", "ντ", 18.2 * MeV, 0, 1 / 2, 3);
+        public static Neutrino ElectronNeutrino { get; } = new Neutrino("Electron Neutrino", "νe", 1.0 * eV, 0, 1 / 2, 1, 1, 0, 0);
+        public static Neutrino MuonNeutrino { get; } = new Neutrino("Muon Neutrino", "νμ", 0.17 * MeV, 0, 1 / 2, 2, 0, 1, 0);
+        public static Neutrino TauNeutrino { get; } = new Neutrino("Tau Neutrino", "ντ", 18.2 * MeV, 0, 1 / 2, 3, 0, 0, 1);
 
         // Antineutrino
 
-        public static AntiNeutrino AntiElectronNeutrino { get; } = new AntiNeutrino("Anti Electron Neutrino", "νe", 1.0 * eV, 0, -(1 / 2), 1);
-        public static AntiNeutrino AntiMuonNeutrino { get; } = new AntiNeutrino("Anti Muon Neutrino", "νμ", 0.17 * MeV, 0, -(1 / 2), 2);
-        public static AntiNeutrino AntiTauNeutrino { get; } = new AntiNeutrino("Anti Tau Neutrino", "ντ", 18.2 * MeV, 0, -(1 / 2), 3);
+        public static AntiNeutrino ElectronAntiNeutrino { get; } = new AntiNeutrino("Electron Anti Neutrino", "νe", 1.0 * eV, 0, -(1 / 2), 1, -1, 0, 0);
+        public static AntiNeutrino MuonAntiNeutrino { get; } = new AntiNeutrino("Muon Anti Neutrino", "νμ", 0.17 * MeV, 0, -(1 / 2), 2, 0, -1, 0);
+        public static AntiNeutrino TauAntiNeutrino { get; } = new AntiNeutrino("Tau Anti Neutrino", "ντ", 18.2 * MeV, 0, -(1 / 2), 3, 0, 0, -1);
 
         // Bosons
 
