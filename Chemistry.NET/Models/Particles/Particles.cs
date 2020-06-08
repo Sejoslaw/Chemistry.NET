@@ -15,21 +15,21 @@ namespace Chemistry.NET.Models.Particles
     {
         // Quarks
 
-        public static Quark Up { get; } = new Quark("Up", "u", 2.2 * MeV, 2 / 3, 1 / 2, 1);
-        public static Quark Down { get; } = new Quark("Down", "d", 4.7 * MeV, -(1 / 3), 1 / 2, 1);
-        public static Quark Charm { get; } = new Quark("Charm", "c", 1.28 * GeV, 2 / 3, 1 / 2, 2);
-        public static Quark Strange { get; } = new Quark("Strange", "s", 96 * MeV, -(1 / 3), 1 / 2, 2);
-        public static Quark Top { get; } = new Quark("Top", "t", 173.1 * GeV, 2 / 3, 1 / 2, 3);
-        public static Quark Bottom { get; } = new Quark("Bottom", "b", 4.18 * GeV, -(1 / 3), 1 / 2, 3);
+        public static Quark Up { get; } = new Quark("Up", "u", 2.2 * MeV, 2 / 3, 1 / 2, 1, 1 / 2, 1 / 3, 1 / 2, 0, 0, 0, 0);
+        public static Quark Down { get; } = new Quark("Down", "d", 4.7 * MeV, -(1 / 3), 1 / 2, 1, 1 / 2, 1 / 3, -(1 / 2), 0, 0, 0, 0);
+        public static Quark Charm { get; } = new Quark("Charm", "c", 1.28 * GeV, 2 / 3, 1 / 2, 2, 1 / 2, 1 / 3, 0, 1, 0, 0, 0);
+        public static Quark Strange { get; } = new Quark("Strange", "s", 96 * MeV, -(1 / 3), 1 / 2, 2, 1 / 2, -(1 / 3), 0, 0, -1, 0, 0);
+        public static Quark Top { get; } = new Quark("Top", "t", 173.1 * GeV, 2 / 3, 1 / 2, 3, 1 / 2, 1 / 3, 0, 0, 0, 1, 0);
+        public static Quark Bottom { get; } = new Quark("Bottom", "b", 4.18 * GeV, -(1 / 3), 1 / 2, 3, 1 / 2, 1 / 3, 0, 0, 0, 0, -1);
 
         // Antiquark
 
-        public static AntiQuark AntiUp { get; } = new AntiQuark("Anti Up", "u", 2.2 * MeV, -(2 / 3), 1 / 2, 1);
-        public static AntiQuark AntiDown { get; } = new AntiQuark("Anti Down", "d", 4.7 * MeV, 1 / 3, 1 / 2, 1);
-        public static AntiQuark AntiCharm { get; } = new AntiQuark("Anti Charm", "c", 1.28 * GeV, -(2 / 3), 1 / 2, 2);
-        public static AntiQuark AntiStrange { get; } = new AntiQuark("Anti Strange", "s", 96 * MeV, 1 / 3, 1 / 2, 2);
-        public static AntiQuark AntiTop { get; } = new AntiQuark("Anti Top", "t", 173.1 * GeV, -(2 / 3), 1 / 2, 3);
-        public static AntiQuark AntiBottom { get; } = new AntiQuark("Anti Bottom", "b", 4.18 * GeV, 1 / 3, 1 / 2, 3);
+        public static AntiQuark AntiUp { get; } = new AntiQuark("Anti Up", "u", 2.2 * MeV, -(2 / 3), 1 / 2, 1, 1 / 2, 1 / 3, 1 / 2, 0, 0, 0, 0);
+        public static AntiQuark AntiDown { get; } = new AntiQuark("Anti Down", "d", 4.7 * MeV, 1 / 3, 1 / 2, 1, 1 / 2, 1 / 3, -(1 / 2), 0, 0, 0, 0);
+        public static AntiQuark AntiCharm { get; } = new AntiQuark("Anti Charm", "c", 1.28 * GeV, -(2 / 3), 1 / 2, 2, 1 / 2, 1 / 3, 0, 1, 0, 0, 0);
+        public static AntiQuark AntiStrange { get; } = new AntiQuark("Anti Strange", "s", 96 * MeV, 1 / 3, 1 / 2, 2, 1 / 2, -(1 / 3), 0, 0, -1, 0, 0);
+        public static AntiQuark AntiTop { get; } = new AntiQuark("Anti Top", "t", 173.1 * GeV, -(2 / 3), 1 / 2, 3, 1 / 2, 1 / 3, 0, 0, 0, 1, 0);
+        public static AntiQuark AntiBottom { get; } = new AntiQuark("Anti Bottom", "b", 4.18 * GeV, 1 / 3, 1 / 2, 3, 1 / 2, 1 / 3, 0, 0, 0, 0, -1);
 
         // Leptons
 

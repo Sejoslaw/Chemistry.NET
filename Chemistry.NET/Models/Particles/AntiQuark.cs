@@ -6,10 +6,20 @@
 
 namespace Chemistry.NET.Models.Particles
 {
-    public partial class AntiQuark : Fermion
+    public partial class AntiQuark : Quark
     {
-        public AntiQuark(string name, string symbol, double mass, double charge, double spin, int generation)
-         : base(name, symbol, mass, charge, spin, generation)
+        public AntiQuark(
+            string name, string symbol, double mass,
+            double charge, double spin, int generation,
+            double totalAngularMomentum, double baryonNumber, double isospin,
+            double charm, double strangeness, double topness,
+            double bottomness)
+             : base(
+                 name, symbol, mass,
+                 charge, spin, generation,
+                 totalAngularMomentum, baryonNumber, isospin,
+                 charm, strangeness, topness,
+                 bottomness)
         {
         }
     }

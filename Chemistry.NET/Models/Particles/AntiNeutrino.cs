@@ -6,7 +6,7 @@
 
 namespace Chemistry.NET.Models.Particles
 {
-    public partial class AntiNeutrino : Lepton
+    public partial class AntiNeutrino : Neutrino
     {
         public AntiNeutrino(string name, string symbol, double mass, double charge, double spin, int generation)
          : base(name, symbol, mass, charge, spin, generation)
