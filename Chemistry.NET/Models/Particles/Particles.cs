@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using static Chemistry.NET.Constants;
+
 namespace Chemistry.NET.Models.Particles
 {
     /// <summary>
@@ -11,19 +13,6 @@ namespace Chemistry.NET.Models.Particles
     /// </summary>
     public static class Particles
     {
-        /// <summary>
-        /// eV / c^2
-        /// </summary>
-        private const double eV = 10 ^ 0;
-        /// <summary>
-        /// MeV / c^2
-        /// </summary>
-        private const double MeV = 10 ^ 6;
-        /// <summary>
-        /// GeV / c^2
-        /// </summary>
-        private const double GeV = 10 ^ 9;
-
         // Quarks
 
         public static Quark Up { get; } = new Quark("Up", "u", 2.2 * MeV, 2 / 3, 1 / 2, 1);
