@@ -22,6 +22,7 @@ namespace Chemistry.NET.Tests
             Assert.NotEmpty(Container.PeriodicTableGroups);
             Assert.NotEmpty(Container.PhysicalStates);
             Assert.NotEmpty(Container.ElementStructures);
+            Assert.NotEmpty(Container.Isotopes);
         }
     }
 }

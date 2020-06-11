@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Tools files
 *.data
+
+# Rider files
+*.idea
+.idea
