@@ -18,7 +18,9 @@ Project Name | Link | Description
 -------------|------|------------
 Chemistry.NET | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Chemistry.NET) | Core library with all the models and functionality
 Chemistry.NET.Tests | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Chemistry.NET.Tests) | Tests for core library
-Chemistry.NET.Tools.ElementsGenerator | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools/Chemistry.NET.Tools.ElementsGenerator) | Generator used to generate [Elements](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Elements.cs) class which contains all the elements definitions
+Chemistry.NET.Tools.ElementStructureGenerator | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools/Chemistry.NET.Tools.ElementStructureGenerator) | Generator used to generate [Element Structures](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/ElementStructures.cs)
+Chemistry.NET.Tools.ElementsGenerator | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools/Chemistry.NET.Tools.ElementsGenerator) | Generator used to generate [Elements](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Elements.cs)
+Chemistry.NET.Tools.IsotopesGenerator | [Click](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools/Chemistry.NET.Tools.IsotopesGenerator) | Generator used to generate [Isotopes](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Models/Isotopes.cs)
 
 ## 3. Installation
 You can install it via NuGet package:
