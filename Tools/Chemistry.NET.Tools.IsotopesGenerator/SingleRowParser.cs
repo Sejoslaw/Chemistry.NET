@@ -118,7 +118,7 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
         {
             string[] invalidChars = { "[", "(" };
             
-            text = text.Replace(Environment.NewLine, "");
+            text = text.Replace(Environment.NewLine, "").Replace("\"", "");
 
             foreach (var invalidChar in invalidChars)
             {

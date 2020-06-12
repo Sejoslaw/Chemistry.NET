@@ -4912,7 +4912,7 @@ namespace Chemistry.NET.Models
         public static Isotope Tl207 { get; } = new Isotope(Elements.Thallium, "207Tl", "Actinium C", "81", "126", "206.977419", "4.77", "β−", "207Pb", "207Pb");
         public static Isotope MTl207 { get; } = new Isotope(Elements.Thallium, "207mTl", "", "1348.1", "1.33", "IT ", "", "", "207Tl", "207Tl");
         public static Isotope MTl207_1 { get; } = new Isotope(Elements.Thallium, "207mTl", "", "1348.1", "1.33", "β− ", "", "", "207Pb", "207Pb");
-        public static Isotope Tl208 { get; } = new Isotope(Elements.Thallium, "208Tl", "Thorium C"", "81", "127", "207.9820187", "3.053", "β−", "208Pb", "208Pb");
+        public static Isotope Tl208 { get; } = new Isotope(Elements.Thallium, "208Tl", "Thorium C", "81", "127", "207.9820187", "3.053", "β−", "208Pb", "208Pb");
         public static Isotope Tl209 { get; } = new Isotope(Elements.Thallium, "209Tl", "", "81", "128", "208.985359", "2.161", "β−", "209Pb", "209Pb");
         public static Isotope Tl210 { get; } = new Isotope(Elements.Thallium, "210Tl", "Radium C″", "81", "129", "209.990074", "1.30", "β− ", "210Pb", "210Pb");
         public static Isotope Tl210_1 { get; } = new Isotope(Elements.Thallium, "210Tl", "Radium C″", "81", "129", "209.990074", "1.30", "β−, n ", "209Pb", "209Pb");
