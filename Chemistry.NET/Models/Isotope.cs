@@ -4,9 +4,13 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Chemistry.NET.Models
 {
-    public class Isotope
+    public partial class Isotope
     {
         public Element BaseElement { get; }
         public string Nuclide { get; }
@@ -41,6 +45,40 @@ namespace Chemistry.NET.Models
             DaughterIsotope = daughterIsotope;
             Spin = spin;
             Parity = parity;
+        }
+        
+        /// <summary>
+        /// Returns the Nuclide Number from the Atomic Number
+        /// </summary>
+        /// <returns></returns>
+        public int GetNuclideNumber()
+        {
+            for (var i = 0; i < Nuclide.Length; ++i)
+            {
+                if (char.IsNumber(Nuclide[i]))
+                {
+                    continue;
+                }
+                
+                var numberString = Nuclide.Substring(0, i);
+                var nuclideValue = int.Parse(numberString);
+                return nuclideValue;
+            }
+            
+            throw new FormatException($"Unable to parse Nuclide Number of Isotope: { Nuclide }");
+        }
+        
+        /// <summary>
+        /// Returns the known Isobars from the current Isotope
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Isotope> GetIsobars()
+        {
+            var nuclideNumber = GetNuclideNumber();
+            return Container
+                .Isotopes
+                .Where(isotope => isotope.GetNuclideNumber() == nuclideNumber && !isotope.Nuclide.Equals(Nuclide))
+                .ToList();
         }
     }
 }
