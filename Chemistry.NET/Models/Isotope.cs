@@ -10,6 +10,9 @@ using System.Linq;
 
 namespace Chemistry.NET.Models
 {
+    /// <summary>
+    /// Definition of a known, non-hypothetical Isotope.
+    /// </summary>
     public partial class Isotope
     {
         public Element BaseElement { get; }
