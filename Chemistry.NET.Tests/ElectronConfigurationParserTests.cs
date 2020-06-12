@@ -19,7 +19,7 @@ namespace Chemistry.NET.Tests.Models
 
             foreach (var element in Container.Elements)
             {
-                var electronShellData = parser.Parse(element.ElectronConfiguration);
+                var electronShellData = ElectronConfigurationParser.Parse(element.ElectronConfiguration);
 
                 foreach (var data in electronShellData)
                 {

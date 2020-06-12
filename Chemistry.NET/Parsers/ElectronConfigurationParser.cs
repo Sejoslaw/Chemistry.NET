@@ -22,7 +22,7 @@ namespace Chemistry.NET.Parsers
         ///     1. Subshells in configuration must be split with a space (' ').
         ///     2. Subshell chars letters must be written in lowercase.
         /// </summary>
-        public IEnumerable<ElectronShellData> Parse(ElectronConfiguration config)
+        public static IEnumerable<ElectronShellData> Parse(ElectronConfiguration config)
         {
             var subshellsDefinitions = config.Configuration.Split(' ');
             var subshells = new List<ElectronShellData>();
