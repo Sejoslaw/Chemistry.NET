@@ -66,6 +66,11 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
                 isotopicMass = fields[index];
                 index++;
             }
+            else if (atomicNumber.Trim().Equals(""))
+            {
+                atomicNumber = "";
+                index++;
+            }
             else
             {
                 neutronCount = fields[index + 1];

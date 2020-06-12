@@ -15,9 +15,9 @@ namespace Chemistry.NET.Models
         public Element BaseElement { get; }
         public string Nuclide { get; }
         /// <summary>
-        /// Same as Proton count.
+        /// Same as Atomic Number.
         /// </summary>
-        public string AtomicNumber { get; }
+        public string ProtonCount { get; }
         public string NeutronCount { get; }
         /// <summary>
         /// Mass in Daltons.
@@ -30,14 +30,14 @@ namespace Chemistry.NET.Models
         public string Parity { get; }
 
         public Isotope(
-            Element baseElement, string nuclide, string atomicNumber, 
+            Element baseElement, string nuclide, string protonCount, 
             string neutronCount, string isotopicMass, string halftime,
             string decay, string daughterIsotope, string spin,
             string parity)
         {
             BaseElement = baseElement;
             Nuclide = nuclide;
-            AtomicNumber = atomicNumber;
+            ProtonCount = protonCount;
             NeutronCount = neutronCount;
             IsotopicMass = isotopicMass;
             Halftime = halftime;
@@ -48,7 +48,7 @@ namespace Chemistry.NET.Models
         }
         
         /// <summary>
-        /// Returns the Nuclide Number from the Atomic Number
+        /// Returns the Nuclide Number from the Atomic Number.
         /// </summary>
         /// <returns></returns>
         public int GetNuclideNumber()
@@ -64,12 +64,46 @@ namespace Chemistry.NET.Models
                 var nuclideValue = int.Parse(numberString);
                 return nuclideValue;
             }
-            
-            throw new FormatException($"Unable to parse Nuclide Number of Isotope: { Nuclide }");
+
+            return -1;
         }
         
         /// <summary>
-        /// Returns the known Isobars from the current Isotope
+        /// Returns the excess amount of Neutrons.
+        /// </summary>
+        /// <returns></returns>
+        public int GetNeutronExcess()
+        {
+            if (!double.TryParse(NeutronCount, out var neutrons))
+            {
+                if (NeutronCount.Equals(""))
+                {
+                    neutrons = BaseElement.Structure.NeutronsCount;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            
+            if (!double.TryParse(ProtonCount, out var protons))
+            {
+                if (ProtonCount.Equals(""))
+                {
+                    protons = BaseElement.Structure.ProtonsCount;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+
+            return (int)neutrons - (int)protons;
+        }
+        
+        /// <summary>
+        /// Returns the known Isobars from the current Isotope.
+        /// Different Isotopes with the same Nuclide Number.
         /// </summary>
         /// <returns></returns>
         public IEnumerable<Isotope> GetIsobars()
@@ -78,6 +112,58 @@ namespace Chemistry.NET.Models
             return Container
                 .Isotopes
                 .Where(isotope => isotope.GetNuclideNumber() == nuclideNumber && !isotope.Nuclide.Equals(Nuclide))
+                .ToList();
+        }
+
+        /// <summary>
+        /// Returns the known Isotopes from the current Isotope.
+        /// Different Isotopes with the same Neutron Number but different Proton Number.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Isotope> GetIsotones()
+        {
+            return Container
+                .Isotopes
+                .Where(isotope => isotope.NeutronCount.Equals(NeutronCount) &&
+                                  isotope.ProtonCount.Equals(ProtonCount))
+                .ToList();
+        }
+        
+        /// <summary>
+        /// Returns the known Isodiaphers from the current Isotope.
+        /// Equal Neutron excess.
+        /// N1 - Z1 = N2 - Z2
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Isotope> GetIsodiaphers()
+        {
+            var excessNeutrons = GetNeutronExcess();
+            return Container
+                .Isotopes
+                .Where(isotope => excessNeutrons == isotope.GetNeutronExcess())
+                .ToList();
+        }
+        
+        /// <summary>
+        /// Returns the known Mirror Nuclei's.
+        /// Z1 = N2 and Z2 = N1
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Isotope> GetMirrorNuclei()
+        {
+            return Container
+                .Isotopes
+                .Where(isotope => isotope.NeutronCount.Equals(ProtonCount) && 
+                                  isotope.ProtonCount.Equals(NeutronCount))
+                .ToList();
+        }
+
+        public IEnumerable<Isotope> GetIsomers()
+        {
+            return Container
+                .Isotopes
+                .Where(isotope => isotope.ProtonCount.Equals(ProtonCount) && 
+                                  isotope.IsotopicMass.Equals(IsotopicMass))
                 .ToList();
         }
     }
