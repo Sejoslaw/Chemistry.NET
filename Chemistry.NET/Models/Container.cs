@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Chemistry.NET.Models.Particles;
 
 namespace Chemistry.NET.Models
@@ -24,16 +25,7 @@ namespace Chemistry.NET.Models
 
         private static IEnumerable<TModel> GetAll<TModel>(Type type)
         {
-            ICollection<TModel> list = new List<TModel>();
-
-            foreach (var obj in type.GetProperties())
-            {
-                list.Add((TModel)obj.GetValue(null));
-            }
-
-            list = (list as List<TModel>).AsReadOnly();
-
-            return list;
+            return type.GetProperties().Select(obj => (TModel) obj.GetValue(null)).ToList().AsReadOnly();
         }
     }
 }

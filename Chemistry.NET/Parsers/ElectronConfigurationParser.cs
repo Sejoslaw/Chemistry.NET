@@ -24,10 +24,10 @@ namespace Chemistry.NET.Parsers
         /// </summary>
         public IEnumerable<ElectronShellData> Parse(ElectronConfiguration config)
         {
-            string[] subshellsDefinitions = config.Configuration.Split(' ');
+            var subshellsDefinitions = config.Configuration.Split(' ');
             var subshells = new List<ElectronShellData>();
 
-            foreach (string subshellDef in subshellsDefinitions)
+            foreach (var subshellDef in subshellsDefinitions)
             {
                 ParseSubshell(subshells, subshellDef);
             }
@@ -35,7 +35,7 @@ namespace Chemistry.NET.Parsers
             return subshells.AsReadOnly();
         }
 
-        private void ParseSubshell(ICollection<ElectronShellData> subshells, string subshellDef)
+        private static void ParseSubshell(ICollection<ElectronShellData> subshells, string subshellDef)
         {
             // Shell
 
@@ -44,8 +44,11 @@ namespace Chemistry.NET.Parsers
 
             if (shellData == null)
             {
-                shellData = new ElectronShellData();
-                shellData.Shell = Container.ElectronShells.FirstOrDefault(s => s.QuantumNumber.ToString().Equals(shellChar) && char.IsUpper(s.ShellName[0]));
+                shellData = new ElectronShellData
+                {
+                    Shell = Container.ElectronShells.FirstOrDefault(s =>
+                        s.QuantumNumber.ToString().Equals(shellChar) && char.IsUpper(s.ShellName[0]))
+                };
 
                 subshells.Add(shellData);
             }
@@ -58,16 +61,16 @@ namespace Chemistry.NET.Parsers
             // Number Of Electrons
 
             var numberOfElectronsString = subshellDef.Substring(2);
-            int numberOfElectrons = int.Parse(numberOfElectronsString);
+            var numberOfElectrons = int.Parse(numberOfElectronsString);
 
-            if (numberOfElectrons > subshell.GetMaxNumberOfElectrons())
+            if (subshell != null && numberOfElectrons > subshell.GetMaxNumberOfElectrons())
             {
                 throw new ArgumentException($"Invalid number of electrons on subshell: { subshellDef }", nameof(subshellDef));
             }
 
             // Adding to parsed objects
 
-            shellData.Subshells.Add(subshell, numberOfElectrons);
+            shellData.Subshells.Add(subshell ?? throw new InvalidOperationException("Unknown ElectronSubShell"), numberOfElectrons);
         }
     }
 }

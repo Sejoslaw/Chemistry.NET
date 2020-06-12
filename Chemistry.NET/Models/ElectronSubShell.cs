@@ -14,10 +14,5 @@ namespace Chemistry.NET.Models
         public ElectronSubShell(string shellName, int quantumNumber) : base(shellName, quantumNumber)
         {
         }
-
-        public override int GetMaxNumberOfElectrons()
-        {
-            return 4 * QuantumNumber + 2;
-        }
     }
 }

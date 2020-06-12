@@ -63,7 +63,7 @@ namespace Chemistry.NET.Tests
             });
         }
 
-        private void PrepareTestEnv(Func<Isotope, bool> action)
+        private static void PrepareTestEnv(Func<Isotope, bool> action)
         {
             var rand = new Random();
             

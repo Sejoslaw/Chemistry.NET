@@ -26,16 +26,5 @@ namespace Chemistry.NET.Models
             ShellName = shellName;
             QuantumNumber = quantumNumber;
         }
-
-        public virtual int GetMaxNumberOfElectrons()
-        {
-            return 2 * (QuantumNumber ^ 2);
-        }
-
-        internal ElectronShell AddSubshells(params ElectronShell[] subShells)
-        {
-            SubShells = subShells;
-            return this;
-        }
     }
 }
