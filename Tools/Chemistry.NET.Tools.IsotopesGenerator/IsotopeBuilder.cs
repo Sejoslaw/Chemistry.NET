@@ -99,7 +99,7 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
                 {
                     var toAppend = MultiRowParser.Parse(elementName, rows, fields, fieldValues, rowNumber, rowSpan);
                     toAppend.ForEach(parsedRow => Builder.Append(Space + Space + parsedRow));
-                    rowNumber += rowSpan;
+                    rowNumber += rowSpan - 1;
                 }
                 else
                 {
