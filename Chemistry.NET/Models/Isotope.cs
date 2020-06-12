@@ -94,7 +94,7 @@ namespace Chemistry.NET.Models
                 }
                 else
                 {
-                    return 1;
+                    return -1;
                 }
             }
 
