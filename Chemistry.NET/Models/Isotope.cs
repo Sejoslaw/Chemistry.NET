@@ -157,7 +157,12 @@ namespace Chemistry.NET.Models
                                   isotope.ProtonCount.Equals(NeutronCount))
                 .ToList();
         }
-
+        
+        /// <summary>
+        /// Returns the known Isomers for the current Isotope.
+        /// Z1 = Z2 and Mass1 = Mass2
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Isotope> GetIsomers()
         {
             return Container
