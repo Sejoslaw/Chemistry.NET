@@ -13,7 +13,7 @@ namespace Chemistry.NET.Models
             return 2 * (QuantumNumber ^ 2);
         }
 
-        internal ElectronShell AddSubshells(params ElectronShell[] subShells)
+        public virtual ElectronShell AddSubshells(params ElectronShell[] subShells)
         {
             SubShells = subShells;
             return this;

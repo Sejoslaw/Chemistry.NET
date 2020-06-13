@@ -15,7 +15,7 @@ namespace Chemistry.NET.Models
         /// Returns the Nuclide Number from the Atomic Number.
         /// </summary>
         /// <returns></returns>
-        public int GetNuclideNumber()
+        public virtual int GetNuclideNumber()
         {
             for (var i = 0; i < Nuclide.Length; ++i)
             {
@@ -36,7 +36,7 @@ namespace Chemistry.NET.Models
         /// Returns the excess amount of Neutrons.
         /// </summary>
         /// <returns></returns>
-        public int GetNeutronExcess()
+        public virtual int GetNeutronExcess()
         {
             if (!double.TryParse(NeutronCount, out var neutrons))
             {
@@ -70,7 +70,7 @@ namespace Chemistry.NET.Models
         /// Different Isotopes with the same Nuclide Number.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Isotope> GetIsobars()
+        public virtual IEnumerable<Isotope> GetIsobars()
         {
             var nuclideNumber = GetNuclideNumber();
             return Container
@@ -84,7 +84,7 @@ namespace Chemistry.NET.Models
         /// Different Isotopes with the same Neutron Number but different Proton Number.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Isotope> GetIsotones()
+        public virtual IEnumerable<Isotope> GetIsotones()
         {
             return Container
                 .Isotopes
@@ -99,7 +99,7 @@ namespace Chemistry.NET.Models
         /// N1 - Z1 = N2 - Z2
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Isotope> GetIsodiaphers()
+        public virtual IEnumerable<Isotope> GetIsodiaphers()
         {
             var excessNeutrons = GetNeutronExcess();
             return Container
@@ -113,7 +113,7 @@ namespace Chemistry.NET.Models
         /// Z1 = N2 and Z2 = N1
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Isotope> GetMirrorNuclei()
+        public virtual IEnumerable<Isotope> GetMirrorNuclei()
         {
             return Container
                 .Isotopes
@@ -127,7 +127,7 @@ namespace Chemistry.NET.Models
         /// Z1 = Z2 and Mass1 = Mass2
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Isotope> GetIsomers()
+        public virtual IEnumerable<Isotope> GetIsomers()
         {
             return Container
                 .Isotopes

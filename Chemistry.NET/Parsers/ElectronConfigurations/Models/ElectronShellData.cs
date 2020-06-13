@@ -7,7 +7,7 @@
 using System.Collections.Generic;
 using Chemistry.NET.Models;
 
-namespace Chemistry.NET.Parsers.Models
+namespace Chemistry.NET.Parsers.ElectronConfigurations.Models
 {
     /// <summary>
     /// Holds the information about an electron shell and a number of electrons in each subshell.

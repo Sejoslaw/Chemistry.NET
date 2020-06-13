@@ -1,3 +1,9 @@
+/// <summary>
+/// Author: Krzysztof Dobrzyński
+/// Project: Chemistry.NET
+/// Source: https://github.com/Sejoslaw/Chemistry.NET
+/// </summary>
+
 using Chemistry.NET.Collections;
 using Chemistry.NET.Models;
 using Xunit;
@@ -12,8 +18,8 @@ namespace Chemistry.NET.Tests
         [InlineData(10, -9)]
         public void Should_add_objects_to_the_ObjectStack(int initialValue, int addToStack)
         {
-            var stack = new ObjectStack<Element>(Elements.Hydrogen, initialValue);
-            stack.Add(addToStack);
+            var stack = new ElementStack(Elements.Hydrogen, initialValue);
+            stack.IncreaseStackSize(addToStack);
             Assert.Equal(stack.Count, initialValue + addToStack);
         }
     }

@@ -5,7 +5,7 @@
 /// </summary>
 
 using Chemistry.NET.Models;
-using Chemistry.NET.Parsers;
+using Chemistry.NET.Parsers.ElectronConfigurations;
 using Xunit;
 
 namespace Chemistry.NET.Tests.Models
