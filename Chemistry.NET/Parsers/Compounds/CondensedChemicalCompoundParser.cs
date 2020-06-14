@@ -24,20 +24,45 @@ namespace Chemistry.NET.Parsers.Compounds
         public override ChemicalCompound Read(string input)
         {
             var compound = new ChemicalCompound();
-            compound.Stack.IncreaseStackSize();
+            compound.StructureTree.IncreaseStackSize();
             
             InnerStacks.Clear();
-            InnerStacks.Push(compound.Stack);
+            InnerStacks.Push(compound.StructureTree);
             
             var index = 0;
-            ReadTree(input, compound.Stack, ref index);
+            ReadTree(input, compound.StructureTree, ref index);
             
             return compound;
         }
 
         public override string Write(ChemicalCompound input)
         {
-            throw new System.NotImplementedException();
+            var builder = new StringBuilder();
+            WriteTree(builder, input.StructureTree);
+            return builder.ToString();
+        }
+
+        private void WriteTree(StringBuilder builder, CompoundStack root)
+        {
+            foreach (var node in root.Nodes)
+            {
+                var numberOfAtoms = node.Count > 1 ? node.Count.ToString() : "";
+                if (node is ElementStack elementStack)
+                {
+                    builder.Append($"{ elementStack.Element.Symbol }{ numberOfAtoms }");
+                }
+                else if (node is CompoundStack compoundStack)
+                {
+                    builder.Append("(");
+                    WriteTree(builder, compoundStack);
+                    builder.Append(")");
+                    builder.Append(numberOfAtoms);
+                }
+                else
+                {
+                    WriteUnknownStack(builder, node);
+                }
+            }
         }
 
         private void ReadTree(string input, CompoundStack root, ref int currentIndex)

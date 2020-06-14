@@ -14,8 +14,8 @@ namespace Chemistry.NET.Compounds
     public partial class ChemicalCompound
     {
         /// <summary>
-        /// Holds the information of how the Compound is build.
+        /// Holds the information of the Compound Structure Tree.
         /// </summary>
-        internal CompoundStack Stack { get; } = new CompoundStack();
+        internal CompoundStack StructureTree { get; } = new CompoundStack();
     }
 }

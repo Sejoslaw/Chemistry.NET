@@ -26,7 +26,9 @@ namespace Chemistry.NET.Tests
         {
             var parser = new CondensedChemicalCompoundParser();
             var compound = parser.Read(input);
-            Assert.NotNull(compound); // For debug purposes
+            var str = parser.Write(compound);
+            
+            Assert.Equal(input, str);
         }
     }
 }
