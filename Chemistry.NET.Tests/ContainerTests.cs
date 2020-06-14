@@ -23,6 +23,7 @@ namespace Chemistry.NET.Tests
             Assert.NotEmpty(Container.PhysicalStates);
             Assert.NotEmpty(Container.ElementStructures);
             Assert.NotEmpty(Container.Isotopes);
+            Assert.NotEmpty(Container.CommonCompounds);
         }
     }
 }

@@ -5,10 +5,8 @@
 /// </summary>
 
 using System;
-using System.Collections.Generic;
 using System.Text;
 using Chemistry.NET.Collections;
-using Chemistry.NET.Compounds;
 using Chemistry.NET.Extensions;
 
 namespace Chemistry.NET.Parsers.Compounds
@@ -19,32 +17,9 @@ namespace Chemistry.NET.Parsers.Compounds
     /// </summary>
     public class CondensedChemicalCompoundParser : AbstractChemicalCompoundParser
     {
-        private Stack<CompoundStack> InnerStacks { get; } = new Stack<CompoundStack>();
-        
-        public override ChemicalCompound Read(string input)
+        protected override void WriteTree(StringBuilder builder, CompoundStack root)
         {
-            var compound = new ChemicalCompound();
-            compound.StructureTree.IncreaseStackSize();
-            
-            InnerStacks.Clear();
-            InnerStacks.Push(compound.StructureTree);
-            
-            var index = 0;
-            ReadTree(input, compound.StructureTree, ref index);
-            
-            return compound;
-        }
-
-        public override string Write(ChemicalCompound input)
-        {
-            var builder = new StringBuilder();
-            WriteTree(builder, input.StructureTree);
-            return builder.ToString();
-        }
-
-        private void WriteTree(StringBuilder builder, CompoundStack root)
-        {
-            foreach (var node in root.Nodes)
+            foreach (var node in root)
             {
                 var numberOfAtoms = node.Count > 1 ? node.Count.ToString() : "";
                 if (node is ElementStack elementStack)
@@ -65,7 +40,7 @@ namespace Chemistry.NET.Parsers.Compounds
             }
         }
 
-        private void ReadTree(string input, CompoundStack root, ref int currentIndex)
+        protected override void ReadTree(string input, CompoundStack root, ref int currentIndex)
         {
             if (currentIndex >= input.Length)
             {
@@ -88,7 +63,7 @@ namespace Chemistry.NET.Parsers.Compounds
 
                 if (char.IsNumber(nextChar))
                 {
-                    numberOfAtoms = GetNumberOfAtoms(input, ref currentIndex);
+                    numberOfAtoms = GetFullNumber(input, ref currentIndex);
                 }
                 
                 var stack = new ElementStack(currentChar.ToString().ToElement(), numberOfAtoms);
@@ -109,7 +84,7 @@ namespace Chemistry.NET.Parsers.Compounds
                 
                 if (char.IsNumber(nextChar))
                 {
-                    numberOfAtoms = GetNumberOfAtoms(input, ref currentIndex);
+                    numberOfAtoms = GetFullNumber(input, ref currentIndex);
                 }
                 
                 root.IncreaseStackSize(numberOfAtoms);
@@ -121,34 +96,18 @@ namespace Chemistry.NET.Parsers.Compounds
                 
                 if (char.IsNumber(nextChar))
                 {
-                    numberOfAtoms = GetNumberOfAtoms(input, ref currentIndex);
+                    numberOfAtoms = GetFullNumber(input, ref currentIndex);
                 }
 
-                var previousChar = input[currentIndex - 3];
+                var previousChar = input[currentIndex - numberOfAtoms.ToString().Length - 2];
                 var stack = new ElementStack($"{ previousChar }{ currentChar }".ToElement(), numberOfAtoms);
                 root.Nodes.Add(stack);
                 ReadTree(input, root, ref currentIndex);
             }
             else
             {
-                throw new FormatException($"Unknown char: '{ currentChar }', at position: { currentChar }");
+                throw new FormatException($"Unknown char: '{ currentChar }', at position: { currentIndex }");
             }
-        }
-
-        private static int GetNumberOfAtoms(string input, ref int currentIndex)
-        {
-            var builder = new StringBuilder();
-            builder.Append(input[currentIndex].ToString());
-            currentIndex++;
-
-            while (currentIndex < input.Length && char.IsNumber(input[currentIndex]))
-            {
-                builder.Append(input[currentIndex]);
-                currentIndex++;
-            }
-
-            var ret = builder.ToString();
-            return int.Parse(ret);
         }
     }
 }

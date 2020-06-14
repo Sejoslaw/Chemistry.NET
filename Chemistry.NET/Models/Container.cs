@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Chemistry.NET.Compounds;
 using Chemistry.NET.Models.Particles;
 
 namespace Chemistry.NET.Models
@@ -21,7 +22,8 @@ namespace Chemistry.NET.Models
         public static IEnumerable<PeriodicTableGroup> PeriodicTableGroups { get; } = GetAll<PeriodicTableGroup>(typeof(PeriodicTableGroups));
         public static IEnumerable<PhysicalState> PhysicalStates { get; } = GetAll<PhysicalState>(typeof(PhysicalStates));
         public static IEnumerable<ElementStructure> ElementStructures { get; } = GetAll<ElementStructure>(typeof(ElementStructures));
-        public static IEnumerable<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(Isotopes));
+        public static IEnumerable<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(Isotopes)); 
+        public static IEnumerable<ChemicalCompound> CommonCompounds { get; } = GetAll<ChemicalCompound>(typeof(CommonCompounds));
 
         private static IEnumerable<TModel> GetAll<TModel>(Type type)
         {
