@@ -12,6 +12,7 @@ namespace Chemistry.NET.Tests
     public class CondensedChemicalCompoundParserTests
     {
         [Theory]
+        [InlineData("Ac2O3")]
         [InlineData("O")]
         [InlineData("O2")]
         [InlineData("Li1234")]

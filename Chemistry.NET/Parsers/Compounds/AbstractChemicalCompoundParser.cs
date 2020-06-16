@@ -41,7 +41,7 @@ namespace Chemistry.NET.Parsers.Compounds
         /// </summary>
         /// <param name="builder"> Contains currently parsed Stacks. </param>
         /// <param name="stack"> Currently parsed Stack. Unknown to the library, could be User own implementation. </param>
-        public virtual void WriteUnknownStack(StringBuilder builder, IChemicalStack stack)
+        protected virtual void WriteUnknownStack(StringBuilder builder, IChemicalStack stack)
         {
         }
         

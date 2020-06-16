@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using Chemistry.NET.Extensions;
+
 namespace Chemistry.NET.Models
 {
     /// <summary>
@@ -11,6 +13,11 @@ namespace Chemistry.NET.Models
     /// </summary>
     public static class Elements
     {
+        // Couple additional commonly used Isotopes
+        public static Element Deuterium { get; } = new Element(0, "D", "Deuterium", (2.01410177811).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1931, ElementStructures.Deuterium);
+        public static Element Tritium { get; } = new Element(0, "T", "Tritium", (3.0160492).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1934, ElementStructures.Tritium);
+        
+        // Core Elements
         public static Element Hydrogen { get; } = new Element(1, "H", "Hydrogen", 1.008, "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", ElementTypes.Nonmetal, 1766, ElementStructures.Hydrogen);
         public static Element Helium { get; } = new Element(2, "He", "Helium", 4.0026, "D9FFFF", new ElectronConfiguration("1s2"), "", "140", "24.587", "", "0", PhysicalStates.Gas, "0.95", "4.22", "0.0001785", ElementTypes.NobleGas, 1868, ElementStructures.Helium);
         public static Element Lithium { get; } = new Element(3, "Li", "Lithium", 7, "CC80FF", new ElectronConfiguration("1s2 2s1"), "0.98", "182", "5.392", "0.618", "+1", PhysicalStates.Solid, "453.65", "1615", "0.534", ElementTypes.AlkaliMetal, 1817, ElementStructures.Lithium);

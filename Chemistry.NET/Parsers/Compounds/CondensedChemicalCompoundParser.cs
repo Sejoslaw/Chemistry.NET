@@ -99,7 +99,7 @@ namespace Chemistry.NET.Parsers.Compounds
                     numberOfAtoms = GetFullNumber(input, ref currentIndex);
                 }
 
-                var previousChar = input[currentIndex - numberOfAtoms.ToString().Length - 2];
+                var previousChar = GetPreviousUpperChar(input, currentIndex, numberOfAtoms); // input[currentIndex - numberOfAtoms.ToString().Length - 2];
                 var stack = new ElementStack($"{ previousChar }{ currentChar }".ToElement(), numberOfAtoms);
                 root.Nodes.Add(stack);
                 ReadTree(input, root, ref currentIndex);
@@ -108,6 +108,21 @@ namespace Chemistry.NET.Parsers.Compounds
             {
                 throw new FormatException($"Unknown char: '{ currentChar }', at position: { currentIndex }");
             }
+        }
+
+        private char GetPreviousUpperChar(string input, in int currentIndex, in int numberOfAtoms)
+        {
+            var lastMinIndex = currentIndex - numberOfAtoms.ToString().Length;
+
+            for (var i = lastMinIndex; i >= 0; --i)
+            {
+                if (char.IsUpper(input[i]))
+                {
+                    return input[i];
+                }
+            }
+            
+            throw new FormatException($"Cannot find last upper char for parameters: [Input: { input }, currentIndex: { currentIndex }, numberOfAtoms: { numberOfAtoms }]");
         }
     }
 }

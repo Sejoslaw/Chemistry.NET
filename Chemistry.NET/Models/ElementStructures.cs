@@ -11,6 +11,11 @@ namespace Chemistry.NET.Models
     /// </summary>
     public static class ElementStructures
     {
+        // Additional Isotopes
+        public static ElementStructure Deuterium { get; } = new ElementStructure("Deuterium", 1, 1, 1, 1);
+        public static ElementStructure Tritium { get; } = new ElementStructure("Tritium", 1, 1, 2, 1);
+        
+        // Core Elements
         public static ElementStructure Hydrogen { get; } = new ElementStructure("Hydrogen", 1, 1, 0, 1);
         public static ElementStructure Helium { get; } = new ElementStructure("Helium", 2, 2, 2, 2);
         public static ElementStructure Lithium { get; } = new ElementStructure("Lithium", 3, 3, 4, 1);

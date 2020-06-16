@@ -13,9 +13,9 @@ namespace Chemistry.NET.Models
     {
         // Hydrogen
 
-        public static Isotope H1 { get; } = new Isotope(Elements.Hydrogen, "1H", "1", "0", "1.00782503224", "Stable", "", "", "1/2+", "1/2+");
-        public static Isotope H2 { get; } = new Isotope(Elements.Hydrogen, "2H ", "1", "1", "2.01410177811", "Stable", "", "", "1+", "1+");
-        public static Isotope H3 { get; } = new Isotope(Elements.Hydrogen, "3H ", "1", "2", "3.01604928199", "12.32", "β−", "3He", "1/2+", "1/2+");
+        public static Isotope Protium { get; } = new Isotope(Elements.Hydrogen, "1H - Protium", "1", "0", "1.00782503224", "Stable", "", "", "1/2+", "1/2+");
+        public static Isotope Deuterium { get; } = new Isotope(Elements.Deuterium, "2H - Deuterium ", "1", "1", "2.01410177811", "Stable", "", "", "1+", "1+");
+        public static Isotope Tritium { get; } = new Isotope(Elements.Tritium, "3H - Tritium", "1", "2", "3.01604928199", "12.32", "β−", "3He", "1/2+", "1/2+");
         public static Isotope H4 { get; } = new Isotope(Elements.Hydrogen, "4H", "1", "3", "4.02643", "1.39", "n", "3H", "2−", "2−");
         public static Isotope H5 { get; } = new Isotope(Elements.Hydrogen, "5H", "1", "4", "5.03531", "> 9.1×10−22 s", "", "", "2n", "2n");
         public static Isotope H6 { get; } = new Isotope(Elements.Hydrogen, "6H", "1", "5", "6.04496", "2.90", "3n", "3H", "2−#", "2−#");
