@@ -1172,7 +1172,7 @@ namespace Chemistry.NET.Compounds
         public static ChemicalCompound Chalcopyrite { get; } = ChemicalCompound.New("CuFeS2", "Chalcopyrite");
         public static ChemicalCompound CopperTwoIronTwoOxide { get; } = ChemicalCompound.New("CuFe2O4", "Copper(II) Iron(II) Oxide");
         public static ChemicalCompound CopperIronSulfide { get; } = ChemicalCompound.New("CuFe2S3", "Copper Iron Sulfide");
-        public static ChemicalCompound BlueVitriol { get; } = ChemicalCompound.New("Cu(H2O)4SO4", "Blue Vitriol (H2O)");
+        public static ChemicalCompound BlueVitriol { get; } = ChemicalCompound.New("(Cu(H2O)4)SO4", "Blue Vitriol (H2O)");
         public static ChemicalCompound CopperOneIodide { get; } = ChemicalCompound.New("CuI", "Copper(I) Iodide");
         public static ChemicalCompound CopperOneIodate { get; } = ChemicalCompound.New("CuIO3", "Copper(I) Iodate");
         public static ChemicalCompound CopperTwoIodate { get; } = ChemicalCompound.New("Cu(IO3)2", "Copper(II) Iodate");
@@ -1923,8 +1923,8 @@ namespace Chemistry.NET.Compounds
         public static ChemicalCompound AmmoniumPhosphate { get; } = ChemicalCompound.New("(NH4)3PO4", "Ammonium Phosphate");
         public static ChemicalCompound AmmoniumChromate { get; } = ChemicalCompound.New("(NH4)2CrO4", "Ammonium Chromate");
         public static ChemicalCompound MercuryTwoAmmoniumThiocyanate { get; } = ChemicalCompound.New("(NH4)2Hg(SCN)4", "Mercury(II) Ammonium Thiocyanate");
-        public static ChemicalCompound AmmoniumHexachloroplatinateFour { get; } = ChemicalCompound.New("(NH4)2PtCl6", "Ammonium Hexachloroplatinate(IV)");
-        public static ChemicalCompound AmmoniumHexathiocyanoplatinateFour { get; } = ChemicalCompound.New("(NH4)2Pt(SCN)6", "Ammonium Hexathiocyanoplatinate(IV)");
+        public static ChemicalCompound AmmoniumHexachloroplatinateFour { get; } = ChemicalCompound.New("(NH4)2(PtCl6)", "Ammonium Hexachloroplatinate(IV)");
+        public static ChemicalCompound AmmoniumHexathiocyanoplatinateFour { get; } = ChemicalCompound.New("(NH4)2(Pt(SCN)6)", "Ammonium Hexathiocyanoplatinate(IV)");
         public static ChemicalCompound AmmoniumSulfate { get; } = ChemicalCompound.New("(NH4)2SO4", "Ammonium Sulfate");
         public static ChemicalCompound NitrogenTriiodide { get; } = ChemicalCompound.New("NI3", "Nitrogen Triiodide");
         public static ChemicalCompound NitricOxide { get; } = ChemicalCompound.New("NO", "Nitric Oxide");
@@ -1948,7 +1948,7 @@ namespace Chemistry.NET.Compounds
         public static ChemicalCompound SodiumDihydrogenArsenate { get; } = ChemicalCompound.New("NaH2AsO4", "Sodium Dihydrogen Arsenate");
         public static ChemicalCompound SodiumDicyanoaurateOne { get; } = ChemicalCompound.New("NaAu(CN)2", "Sodium Dicyanoaurate(I)");
         public static ChemicalCompound SodiumDichromateDihydrate { get; } = ChemicalCompound.New("Na2Cr2O7", "Sodium Dichromate Dihydrate (2H2O)");
-        public static ChemicalCompound SodiumTetranitratoborateThree { get; } = ChemicalCompound.New("NaB(NO3)4", "Sodium Tetranitratoborate(III)");
+        public static ChemicalCompound SodiumTetranitratoborateThree { get; } = ChemicalCompound.New("Na(B(NO3)4)", "Sodium Tetranitratoborate(III)");
         public static ChemicalCompound SodiumBromide { get; } = ChemicalCompound.New("NaBr", "Sodium Bromide");
         public static ChemicalCompound SodiumHypobromite { get; } = ChemicalCompound.New("NaBrO", "Sodium Hypobromite");
         public static ChemicalCompound SodiumBromite { get; } = ChemicalCompound.New("NaBrO2", "Sodium Bromite");
@@ -2018,7 +2018,7 @@ namespace Chemistry.NET.Compounds
         public static ChemicalCompound SodiumMetazirconate { get; } = ChemicalCompound.New("Na2ZrO3", "Sodium Metazirconate");
         public static ChemicalCompound Cryolite_1 { get; } = ChemicalCompound.New("Na3AlF6", "Cryolite");
         public static ChemicalCompound SodiumArsenate { get; } = ChemicalCompound.New("Na3AsO4", "Sodium Arsenate");
-        public static ChemicalCompound SodiumTricarbonatocobaltateThree { get; } = ChemicalCompound.New("Na3Co(CO3)3", "Sodium Tricarbonatocobaltate(III)");
+        public static ChemicalCompound SodiumTricarbonatocobaltateThree { get; } = ChemicalCompound.New("Na3(Co(CO3)3)", "Sodium Tricarbonatocobaltate(III)");
         public static ChemicalCompound SodiumOrthovanadate { get; } = ChemicalCompound.New("Na3VO4", "Sodium Orthovanadate");
         public static ChemicalCompound TrisodiumCitrate { get; } = ChemicalCompound.New("Na3C6H5O7", "Trisodium Citrate");
         public static ChemicalCompound TrisodiumPhosphite { get; } = ChemicalCompound.New("Na3PO3", "Trisodium Phosphite");

@@ -25,6 +25,7 @@ namespace Chemistry.NET.Tests
         [InlineData("CH(OH)3")]
         [InlineData("CH2(OH)4")]
         [InlineData("Li2O4((H7C123)12OH)CO(H)3")]
+        [InlineData("Na3(Co(CO3)3)")]
         public void Should_parse_ChemicalCompound_using_CondensedChemicalCompoundParser(string input)
         {
             var parser = new CondensedChemicalCompoundParser();
