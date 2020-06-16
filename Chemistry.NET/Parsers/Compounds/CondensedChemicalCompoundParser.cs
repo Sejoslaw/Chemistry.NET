@@ -99,7 +99,7 @@ namespace Chemistry.NET.Parsers.Compounds
                     numberOfAtoms = GetFullNumber(input, ref currentIndex);
                 }
 
-                var previousChar = GetPreviousUpperChar(input, currentIndex, numberOfAtoms); // input[currentIndex - numberOfAtoms.ToString().Length - 2];
+                var previousChar = GetPreviousUpperChar(input, currentIndex, numberOfAtoms);
                 var stack = new ElementStack($"{ previousChar }{ currentChar }".ToElement(), numberOfAtoms);
                 root.Nodes.Add(stack);
                 ReadTree(input, root, ref currentIndex);
