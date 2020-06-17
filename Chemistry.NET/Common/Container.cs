@@ -47,6 +47,13 @@ namespace Chemistry.NET.Common
             Isos.Tb159, Isos.Ho165, Isos.Tm169, Isos.Au197, Isos.Bi209,
             Isos.Pa231
         };
+
+        public static IList<Isotope> AlphaNuclides { get; } = new List<Isotope>
+        {
+            Isos.He4, Isos.Be8, Isos.C12, Isos.O16, Isos.Ne20,
+            Isos.Mg24, Isos.Si28, Isos.S32, Isos.Ar36, Isos.Ca40, 
+            Isos.Ti44, Isos.Cr48, Isos.Fe52, Isos.Ni56, Isos.Zn60
+        };
         
         // --== Methods ==--
 
