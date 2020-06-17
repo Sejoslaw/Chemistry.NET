@@ -71,7 +71,7 @@ namespace Chemistry.NET.Parsers.Compounds
         /// Parses given stack and serializes it into it's string representation.
         /// </summary>
         /// <param name="builder"></param>
-        /// <param name="root"></param>
+        /// <param name="stack"></param>
         protected virtual void WriteTree(StringBuilder builder, CompoundStack stack)
         {
         }

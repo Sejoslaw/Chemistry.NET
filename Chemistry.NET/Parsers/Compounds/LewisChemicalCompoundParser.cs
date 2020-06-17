@@ -39,6 +39,7 @@ namespace Chemistry.NET.Parsers.Compounds
     {
         protected override void WriteTree(StringBuilder builder, CompoundStack root)
         {
+            throw new NotImplementedException("[W.I.P.] For now on please use CondensedChemicalCompoundParser");
         }
 
         protected override void ReadTree(string input, CompoundStack root, ref int currentIndex)
@@ -62,8 +63,7 @@ namespace Chemistry.NET.Parsers.Compounds
                 
                 var numberOfAtoms = 1;
 
-                if ((nextChar == ')' || nextChar == '|') &&
-                    currentIndex + 1 < input.Length)
+                if (nextChar == ')' && currentIndex + 1 < input.Length)
                 {
                     if (char.IsNumber(input[currentIndex + 1])) // We can have a number after closing bracket ')
                     {
@@ -129,15 +129,57 @@ namespace Chemistry.NET.Parsers.Compounds
                 root.IncreaseStackSize(numberOfAtoms);
                 InnerStacks.Pop();
             }
-            // else if (currentChar == '-')
-            // {
-            // }
-            // else if (currentChar == '=')
-            // {
-            // }
-            // else if (currentChar == '|')
-            // {
-            // }
+            else if (currentChar == '-' || currentChar == '=')
+            {
+                // Possible format's of chars next to the '-' or '='
+                // Where: C - upper char; r - lower char; 0 - number;
+                // C - (
+                // ) - C
+                // C - C
+                // ) - (
+                // 0 - (
+                // 0 - C
+                // r - (
+                
+                // For now on it will skip parsing the connections - not supported yet
+                // There is no support (yet) of how to store the number of connections between atoms
+                // This is something that will need to be added later on
+                // TODO: Add support for storing the information about number of connections between atoms
+
+                if (char.IsNumber(nextChar))
+                {
+                    while (input[currentIndex] != '|')
+                    {
+                        currentIndex++;
+                    }
+                }
+                
+                ReadTree(input, root, ref currentIndex);
+            }
+            else if (currentChar == '|')
+            {
+                // Possible format's of chars next to the '|'
+                // Where: C - upper char; r - lower char; 0 - number;  
+                // C | 0
+                // r | 0
+                // 0 | C
+                // 0 | (
+                
+                // For now on it will skip parsing the number of connections - not supported yet
+                // There is no support (yet) of how to store the number of connections between atoms
+                // This is something that will need to be added later on
+                // TODO: Add support for storing the information about number of connections between atoms
+
+                if (char.IsNumber(nextChar))
+                {
+                    while (input[currentIndex] != '|')
+                    {
+                        currentIndex++;
+                    }
+                }
+                
+                ReadTree(input, root, ref currentIndex);
+            }
             else
             {
                 throw new FormatException($"Unknown char: '{ currentChar }', at position: { currentIndex }");
