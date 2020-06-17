@@ -29,7 +29,7 @@ namespace Chemistry.NET.Common
         public static IList<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(Isotopes)); 
         public static IList<ChemicalCompound> CommonCompounds { get; } = GetAll<ChemicalCompound>(typeof(CommonCompounds));
 
-        public static IList<Isotope> ObservationallyStableMonoisotopicElements { get; } = new List<Isotope>
+        public static IList<Isotope> MonoisotopicElements { get; } = new List<Isotope>
         {
             Isos.Be9, Isos.F19, Isos.Na23, Isos.Al27, Isos.P31, 
             Isos.Sc45, Isos.V51, Isos.Mn55, Isos.Co59, Isos.As75, 
@@ -37,6 +37,15 @@ namespace Chemistry.NET.Common
             Isos.I127, Isos.Cs133, Isos.La139, Isos.Pr141, Isos.Eu153, 
             Isos.Tb159, Isos.Ho165, Isos.Tm169, Isos.Lu175, Isos.Re185, 
             Isos.Au197
+        };
+
+        public static IList<Isotope> MononuclidicElements { get; } = new List<Isotope>
+        {
+            Isos.Be9, Isos.F19, Isos.Na23, Isos.Al27, Isos.P31,
+            Isos.Sc45, Isos.Mn55, Isos.Co59, Isos.As75, Isos.Y89,
+            Isos.Nb93, Isos.Rh103, Isos.I127, Isos.Cs133, Isos.Pr141,
+            Isos.Tb159, Isos.Ho165, Isos.Tm169, Isos.Au197, Isos.Bi209,
+            Isos.Pa231
         };
         
         // --== Methods ==--
