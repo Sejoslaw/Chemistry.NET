@@ -109,7 +109,14 @@ namespace Chemistry.NET.Compounds.Parsers.ChemicalCompounds
                 currentIndex = 0;
                 
                 var numberOfMoles = GetFullNumber(input, ref currentIndex);
-                root.IncreaseStackSize(numberOfMoles - 1);
+
+                if (input[currentIndex] == '(')
+                {
+                    currentIndex++;
+                    numberOfMoles--;
+                }
+                
+                root.Count = numberOfMoles;
                 
                 ReadTree(input, root, ref currentIndex);
             }

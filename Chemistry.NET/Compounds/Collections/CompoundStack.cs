@@ -15,7 +15,7 @@ namespace Chemistry.NET.Compounds.Collections
     public partial class CompoundStack : IChemicalStack, IEnumerable<IChemicalStack>
     {
         internal List<IChemicalStack> Nodes { get; } = new List<IChemicalStack>();
-        public int Count { get; private set; }
+        public int Count { get; internal set; }
         
         public void IncreaseStackSize(int count = 1)
         {
