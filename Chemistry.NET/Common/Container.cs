@@ -54,6 +54,17 @@ namespace Chemistry.NET.Common
             Isos.Mg24, Isos.Si28, Isos.S32, Isos.Ar36, Isos.Ca40, 
             Isos.Ti44, Isos.Cr48, Isos.Fe52, Isos.Ni56, Isos.Zn60
         };
+
+        public static IList<Isotope> PrimordialNuclides { get; } = new List<Isotope>
+        {
+            Isos.Te128, Isos.Xe124, Isos.Kr78, Isos.Xe136, Isos.Ge76,
+            Isos.Ba130, Isos.Se82, Isos.Cd116, Isos.Ca48, Isos.Zr96,
+            Isos.Bi209, Isos.Te130, Isos.Nd150, Isos.Mo100, Isos.Eu151,
+            Isos.W180, Isos.V50, Isos.Cd113, Isos.Sm148, Isos.Nd144,
+            Isos.Os186, Isos.Hf174, Isos.In115, Isos.Gd152, Isos.Pt190,
+            Isos.Sm147, Isos.La138, Isos.Rb87, Isos.Re187, Isos.Lu176,
+            Isos.Th232, Isos.U238, Isos.K40, Isos.U235
+        };
         
         // --== Methods ==--
 
