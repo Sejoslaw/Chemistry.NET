@@ -4,9 +4,9 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using Chemistry.NET.Extensions;
+using Chemistry.NET.Common.Extensions;
 using Xunit;
-using static Chemistry.NET.Constants;
+using static Chemistry.NET.Common.Constants;
 
 namespace Chemistry.NET.Tests
 {

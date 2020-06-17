@@ -4,8 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using Chemistry.NET.Models;
-using Chemistry.NET.Parsers.ElectronConfigurations;
+using Chemistry.NET.Common;
+using Chemistry.NET.Elements.Parsers.ElectronConfigurations;
 using Xunit;
 
 namespace Chemistry.NET.Tests.Models

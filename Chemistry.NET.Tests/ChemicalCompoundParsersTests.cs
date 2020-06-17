@@ -4,7 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using Chemistry.NET.Parsers.Compounds;
+using Chemistry.NET.Compounds.Parsers.ChemicalCompounds;
 using Xunit;
 
 namespace Chemistry.NET.Tests

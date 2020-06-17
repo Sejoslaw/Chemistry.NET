@@ -4,8 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using Chemistry.NET.Collections;
-using Chemistry.NET.Models;
+using Chemistry.NET.Compounds.Collections;
 using Xunit;
 
 namespace Chemistry.NET.Tests
@@ -18,7 +17,7 @@ namespace Chemistry.NET.Tests
         [InlineData(10, -9)]
         public void Should_add_objects_to_the_ObjectStack(int initialValue, int addToStack)
         {
-            var stack = new ElementStack(Elements.Hydrogen, initialValue);
+            var stack = new ElementStack(Elements.Models.Elements.Hydrogen, initialValue);
             stack.IncreaseStackSize(addToStack);
             Assert.Equal(stack.Count, initialValue + addToStack);
         }

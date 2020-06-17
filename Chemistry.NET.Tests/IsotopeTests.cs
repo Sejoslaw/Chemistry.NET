@@ -6,7 +6,8 @@
 
 using System;
 using System.Linq;
-using Chemistry.NET.Models;
+using Chemistry.NET.Common;
+using Chemistry.NET.Elements.Models;
 using Xunit;
 
 namespace Chemistry.NET.Tests

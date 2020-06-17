@@ -8,7 +8,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Chemistry.NET.Models;
+using Chemistry.NET.Common;
 
 namespace Chemistry.NET.Tools.IsotopesGenerator
 {
