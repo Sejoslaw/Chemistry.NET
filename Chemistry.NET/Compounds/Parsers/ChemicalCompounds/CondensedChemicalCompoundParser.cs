@@ -104,6 +104,15 @@ namespace Chemistry.NET.Compounds.Parsers.ChemicalCompounds
                 root.Nodes.Add(stack);
                 ReadTree(input, root, ref currentIndex);
             }
+            else if (char.IsNumber(currentChar) && currentIndex < 2) // Only for the number before the compound
+            {
+                currentIndex = 0;
+                
+                var numberOfMoles = GetFullNumber(input, ref currentIndex);
+                root.IncreaseStackSize(numberOfMoles - 1);
+                
+                ReadTree(input, root, ref currentIndex);
+            }
             else
             {
                 throw new FormatException($"Unknown char: '{ currentChar }', at position: { currentIndex }");

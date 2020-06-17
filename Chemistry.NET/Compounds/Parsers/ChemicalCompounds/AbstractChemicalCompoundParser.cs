@@ -32,6 +32,12 @@ namespace Chemistry.NET.Compounds.Parsers.ChemicalCompounds
         public virtual string Write(ChemicalCompound input)
         {
             var builder = new StringBuilder();
+            
+            if (input.StructureTree.Count > 1)
+            {
+                builder.Append(input.StructureTree.Count);
+            }
+            
             WriteTree(builder, input.StructureTree);
             return builder.ToString();
         }

@@ -26,6 +26,23 @@ namespace Chemistry.NET.Tests
         [InlineData("CH2(OH)4")]
         [InlineData("Li2O4((H7C123)12OH)CO(H)3")]
         [InlineData("Na3(Co(CO3)3)")]
+        [InlineData("CH3COOH")]
+        [InlineData("H2SO4")]
+        [InlineData("CH4")]
+        [InlineData("C27H46O")]
+        [InlineData("Fe2(SO4)3")]
+        [InlineData("PtCl2(NH3)2")]
+        [InlineData("Cu3(PO4)2")]
+        [InlineData("TiCl2((CH3)2PCH2CH2P(CH3)2)2")]
+        [InlineData("2H2O")]
+        [InlineData("8Fe(H2O)4(OH)2")]
+        [InlineData("2Al(OH)3")]
+        [InlineData("3H2SO4")]
+        [InlineData("6KOH")]
+        [InlineData("3K2SO4")]
+        [InlineData("2Fe(OH)3")]
+        [InlineData("8HI")]
+        [InlineData("12345H2O")]
         public void Should_parse_ChemicalCompound_using_CondensedChemicalCompoundParser(string input)
         {
             var parser = new CondensedChemicalCompoundParser();
