@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Chemistry.NET.Models;
-using Chemistry.NET.Parsers.Models;
+using Chemistry.NET.Parsers.ElectronConfigurations.Models;
 
-namespace Chemistry.NET.Parsers
+namespace Chemistry.NET.Parsers.ElectronConfigurations
 {
     /// <summary>
     /// Used for parsing Electron Configuration into separate Electron Subshells.

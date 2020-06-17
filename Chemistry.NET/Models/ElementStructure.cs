@@ -15,13 +15,15 @@ namespace Chemistry.NET.Models
         public int ProtonsCount { get; }
         public int ElectronsCount { get; }
         public int NeutronsCount { get; }
+        public int ValenceElectrons { get; }
 
-        public ElementStructure(string elementName, int protonsCount, int electronsCount, int neutronsCount)
+        public ElementStructure(string elementName, int protonsCount, int electronsCount, int neutronsCount, int valenceElectrons)
         {
             ElementName = elementName;
             ProtonsCount = protonsCount;
             ElectronsCount = electronsCount;
             NeutronsCount = neutronsCount;
+            ValenceElectrons = valenceElectrons;
         }
     }
 }
