@@ -14,8 +14,8 @@ namespace Chemistry.NET.Elements.Models
     public static class Elements
     {
         // Couple additional commonly used Isotopes
-        public static Element Deuterium { get; } = new Element(0, "D", "Deuterium", (2.01410177811).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1931, ElementStructures.Deuterium);
-        public static Element Tritium { get; } = new Element(0, "T", "Tritium", (3.0160492).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1934, ElementStructures.Tritium);
+        public static Element Deuterium { get; } = new Element(1, "D", "Deuterium", (2.01410177811).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1931, ElementStructures.Deuterium);
+        public static Element Tritium { get; } = new Element(1, "T", "Tritium", (3.0160492).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1934, ElementStructures.Tritium);
         
         // Core Elements
         public static Element Hydrogen { get; } = new Element(1, "H", "Hydrogen", 1.008, "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", ElementTypes.Nonmetal, 1766, ElementStructures.Hydrogen);
