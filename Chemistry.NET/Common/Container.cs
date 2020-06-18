@@ -18,9 +18,9 @@ namespace Chemistry.NET.Common
     {
         // --== Properties ==--
         
-        public static IList<Particle> Particles { get; } = GetAll<Particle>(typeof(Particles.Models.Particles));
+        public static IList<Particle> Particles { get; } = GetAll<Particle>(typeof(CommonParticles));
         public static IList<ElectronShell> ElectronShells { get; } = GetAll<ElectronShell>(typeof(ElectronShells));
-        public static IList<Element> Elements { get; } = GetAll<Element>(typeof(Elements.Models.Elements));
+        public static IList<Element> Elements { get; } = GetAll<Element>(typeof(CommonElements));
         public static IList<ElementType> ElementTypes { get; } = GetAll<ElementType>(typeof(ElementTypes));
         public static IList<PeriodicTableElement> PeriodicTableElements { get; } = GetAll<PeriodicTableElement>(typeof(PeriodicTable));
         public static IList<PeriodicTableGroup> PeriodicTableGroups { get; } = GetAll<PeriodicTableGroup>(typeof(PeriodicTableGroups));

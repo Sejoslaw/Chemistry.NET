@@ -64,12 +64,12 @@ namespace Chemistry.NET.Tools.ElementsGenerator
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Models
+namespace Chemistry.NET.Elements.Models
 {
     /// <summary>
     /// Container for known Elements.
     /// </summary>
-    public static class Elements
+    public static class CommonElements
     {" + Environment.NewLine);
 
             AppendElements(builder);

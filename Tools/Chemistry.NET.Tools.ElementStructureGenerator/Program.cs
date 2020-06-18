@@ -53,7 +53,7 @@ namespace Chemistry.NET.Tools.ElementStructureGenerator
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Models
+namespace Chemistry.NET.Elements.Models
 {
     /// <summary>
     /// Container for known Element Structures.

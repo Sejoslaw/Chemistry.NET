@@ -39,7 +39,7 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Models
+namespace Chemistry.NET.Elements.Models
 {
     /// <summary>
     /// Container for known Isotopes.

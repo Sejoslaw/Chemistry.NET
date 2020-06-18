@@ -45,7 +45,7 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Compounds
+namespace Chemistry.NET.Compounds.Models
 {
     /// <summary>
     /// Container for some of the most common Chemical Compounds.

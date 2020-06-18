@@ -11,7 +11,7 @@ namespace Chemistry.NET.Elements.Models
     /// <summary>
     /// Container for known Elements.
     /// </summary>
-    public static class Elements
+    public static class CommonElements
     {
         // Couple additional commonly used Isotopes
         public static Element Deuterium { get; } = new Element(1, "D", "Deuterium", (2.01410177811).ToMeV(), "FFFFFF", new ElectronConfiguration("1s1"), "2.2", "120", "13.598", "0.754", "+1, -1", PhysicalStates.Gas, "13.81", "20.28", "0.00008988", null, 1931, ElementStructures.Deuterium);

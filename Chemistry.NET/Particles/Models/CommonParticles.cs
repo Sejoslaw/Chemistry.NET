@@ -11,7 +11,7 @@ namespace Chemistry.NET.Particles.Models
     /// <summary>
     /// Container for known Particles.
     /// </summary>
-    public static class Particles
+    public static class CommonParticles
     {
         // Quarks
 
