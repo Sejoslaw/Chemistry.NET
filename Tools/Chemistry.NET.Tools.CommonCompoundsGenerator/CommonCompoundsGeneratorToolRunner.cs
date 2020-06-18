@@ -6,40 +6,45 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
+using Chemistry.NET.Tools.Common;
+using Chemistry.NET.Tools.Common.Models;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Chemistry.NET.Tools.CommonCompoundsGenerator
 {
     /// <summary>
     /// TODO: There are missing few tweaks but only 4 records do not parse correctly and it can be fixed by hand easily...
     /// </summary>
-    public class CommonCompoundsBuilder
+    public class CommonCompoundsGeneratorToolRunner : GeneratorToolRunner
     {
-        private const string Space = "    ";
-
-        private StringBuilder Builder { get; }
         private ICollection<string> PropertyNames { get; } = new List<string>();
-
-        public CommonCompoundsBuilder(StringBuilder builder)
+        
+        public override void PrintRuntime()
         {
-            Builder = builder;
+            Console.WriteLine("============================================================");
+            Console.WriteLine("|    Chemistry.NET Common Compounds Generator Tool v1.1    |");
+            Console.WriteLine("|                                                          |");
+            Console.WriteLine("|    Source: https://github.com/Sejoslaw/Chemistry.NET     |");
+            Console.WriteLine("============================================================");
         }
 
-        public void Build()
+        public override GeneratorConfigurationModel GetConfiguration()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("incognito");
-
-            using IWebDriver driver = new ChromeDriver(options);
-            Build(driver);
+            return new GeneratorConfigurationModel
+            {
+                Namespace = "Chemistry.NET.Compounds.Models",
+                ClassComment = "Container for some of the most common Chemical Compounds.",
+                ClassName = "CommonCompounds",
+                FileName = "CommonCompounds"
+            };
         }
 
-        private void Build(IWebDriver driver)
+        public override IEnumerable<string> GetLines(IWebDriver driver)
         {
+            var list = new List<string>();
+            
             driver.Navigate().GoToUrl("https://en.wikipedia.org/wiki/Glossary_of_chemical_formulae");
 
             var tables = driver.FindElements(By.ClassName("wikitable"));
@@ -59,23 +64,22 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
 
                     if (int.TryParse(fields[0].GetAttribute("rowspan"), out var rowSpan) && rowSpan > 1)
                     {
-                        HandleMultirow(rows, fields, rowId, rowSpan);
+                        HandleMultirow(list, rows, fields, rowId, rowSpan);
                         rowId = rowId + rowSpan - 1;
                     }
                     else
                     {
-                        AppendRow(fields);
+                        list.Add(PrepareRow(fields[0].Text, fields[1]));
                     }
                 }
-                
-                File.AppendAllText(Program.FileName, Builder.ToString());
-                Builder.Clear();
             }
+
+            return list;
         }
 
-        private void HandleMultirow(IReadOnlyList<IWebElement> rows, IReadOnlyList<IWebElement> fields, in int rowId, in int rowSpan)
+        private void HandleMultirow(List<string> list, IReadOnlyList<IWebElement> rows, IReadOnlyList<IWebElement> fields, in int rowId, in int rowSpan)
         {
-            AppendRow(fields);
+            list.Add(PrepareRow(fields[0].Text, fields[1]));
 
             var chemicalFormula = fields[0];
             
@@ -84,14 +88,8 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
                 var row = rows[index].FindElements(By.TagName("td"));
                 var newFields = new List<IWebElement> { chemicalFormula, row[0] };
                 
-                AppendRow(newFields);
+                list.Add(PrepareRow(newFields[0].Text, newFields[1]));
             }
-        }
-
-        private void AppendRow(IReadOnlyList<IWebElement> fields)
-        {
-            var parsedRow = PrepareRow(fields[0].Text, fields[1]);
-            Builder.Append(Space + Space + parsedRow + Environment.NewLine);
         }
 
         private string PrepareRow(string chemicalFormula, IWebElement compoundNameField)
@@ -117,7 +115,7 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
             return propertyName;
         }
 
-        private string ChooseAppropriateCompoundName(IWebElement field)
+        private static string ChooseAppropriateCompoundName(IWebElement field)
         {
             var children = field.FindElements(By.XPath(".//*"));
 
@@ -140,7 +138,7 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
             }
         }
 
-        private string CleanPropertyName(string str)
+        private static string CleanPropertyName(string str)
         {
             str = str.Replace(",", " ").Replace("-", " ");
 
@@ -162,7 +160,7 @@ namespace Chemistry.NET.Tools.CommonCompoundsGenerator
             return str;
         }
 
-        private string CleanCompoundName(string str)
+        private static string CleanCompoundName(string str)
         {
             // Replace letter after space to be upper
             str = new string(str.Select((ch, i) =>

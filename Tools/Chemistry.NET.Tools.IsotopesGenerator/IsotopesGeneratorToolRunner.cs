@@ -7,42 +7,54 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Chemistry.NET.Common;
+using Chemistry.NET.Tools.Common;
+using Chemistry.NET.Tools.Common.Models;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Chemistry.NET.Tools.IsotopesGenerator
 {
-    internal class IsotopeBuilder
+    internal class IsotopesGeneratorToolRunner : GeneratorToolRunner
     {
-        private const string Space = "    ";
-        
-        private StringBuilder Builder { get; }
-        private IEnumerable<string> ElementNames { get; }
-
-        public IsotopeBuilder(StringBuilder builder, IEnumerable<string> elementNames)
+        public override void PrintRuntime()
         {
-            Builder = builder;
-            ElementNames = elementNames;
+            Console.WriteLine("====================================================="); 
+            Console.WriteLine("|    Chemistry.NET Isotopes Generator Tool v1.1     |"); 
+            Console.WriteLine("|                                                   |");
+            Console.WriteLine("| Source: https://github.com/Sejoslaw/Chemistry.NET |");
+            Console.WriteLine("=====================================================");
         }
 
-        internal void Build()
+        public override GeneratorConfigurationModel GetConfiguration()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("incognito");
-
-            using IWebDriver driver = new ChromeDriver(options);
-            foreach (var elementName in ElementNames)
+            return new GeneratorConfigurationModel
             {
-                Builder.Append(Environment.NewLine);
-                Builder.Append(Space + Space + $"// { elementName }" + Environment.NewLine);
-                Builder.Append(Environment.NewLine);
-                Build(driver, elementName);
-            }
+                Namespace = "Chemistry.NET.Elements.Models",
+                ClassComment = "Container for known Isotopes.",
+                ClassName = "Isotopes",
+                FileName = "Isotopes"
+            };
         }
 
-        private void Build(IWebDriver driver, string elementName)
+        public override IEnumerable<string> GetLines(IWebDriver driver)
         {
+            var list = new List<string>();
+            
+            Container
+                .Elements
+                .Select(e => e.Name)
+                .ToList()
+                .ForEach(elementName => Build(list, driver, elementName));
+
+            return list;
+        }
+
+        private static void Build(List<string> list, IWebDriver driver, string elementName)
+        {
+            list.Add("");
+            list.Add($"/// { elementName }");
+            list.Add("");
+            
             var url = "https://en.wikipedia.org/wiki/Isotopes_of_" + elementName.ToLower();
             driver.Navigate().GoToUrl(url);
 
@@ -98,13 +110,13 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
                 if (rowSpan > 0)
                 {
                     var toAppend = MultiRowParser.Parse(elementName, rows, fields, fieldValues, rowNumber, rowSpan);
-                    toAppend.ForEach(parsedRow => Builder.Append(Space + Space + parsedRow));
+                    list.AddRange(toAppend);
                     rowNumber += rowSpan - 1;
                 }
                 else
                 {
                     var toAppend = SingleRowParser.Parse(elementName, fieldValues);
-                    Builder.Append(Space + Space + toAppend);
+                    list.Add(toAppend);
                 }
             }
         }

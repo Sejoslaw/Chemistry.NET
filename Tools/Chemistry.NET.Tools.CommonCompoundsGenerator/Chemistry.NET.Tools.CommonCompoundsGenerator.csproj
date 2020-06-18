@@ -2,7 +2,9 @@
   <ItemGroup>
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="83.0.4103.3900" />
-    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Chemistry.NET.Tools.Common\Chemistry.NET.Tools.Common.csproj" />
   </ItemGroup>
   
   <PropertyGroup>

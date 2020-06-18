@@ -9,4 +9,8 @@
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Chemistry.NET.Tools.Common\Chemistry.NET.Tools.Common.csproj" />
+  </ItemGroup>
+
 </Project>

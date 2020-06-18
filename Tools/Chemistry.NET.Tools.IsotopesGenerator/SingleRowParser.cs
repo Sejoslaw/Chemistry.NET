@@ -28,7 +28,6 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
             row += HandleSpinAndPurity(fields, index); // Spin, Purity
             
             row += ");";
-            row += Environment.NewLine;
 
             return row;
         }
