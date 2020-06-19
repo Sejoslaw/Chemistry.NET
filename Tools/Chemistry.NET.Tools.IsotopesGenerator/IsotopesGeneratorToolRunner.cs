@@ -31,7 +31,7 @@ namespace Chemistry.NET.Tools.IsotopesGenerator
             {
                 Namespace = "Chemistry.NET.Elements.Models",
                 ClassComment = "Container for known Isotopes.",
-                ClassName = "Isotopes",
+                ClassName = "CommonIsotopes",
                 FileName = "Isotopes"
             };
         }

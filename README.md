@@ -32,7 +32,7 @@ Model Name | Models Collection | Description
 [Particle](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Particles/Models/Particle.cs) | [Common Particles](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Particles/Models/CommonParticles.cs) | Represents a particle / antiparticle from which the Elements are build of (i.e. Quarks / AntiQuarks, Neutrino / AntiNeutrino, etc.)
 [Element Structure](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/ElementStructure.cs) | [Element Structures](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/ElementStructures.cs) | Represents a structure of an Elements (i.e. number of protons / electrons / neutrons, etc.)
 [Periodic Table Element](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/PeriodicTableElement.cs) | [Periodic Table](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/PeriodicTable.cs) | Represents a classical Element inside the Periodic Table with it's position in the table
-[Isotope](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/Isotope.cs) | [Isotopes](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/Isotopes.cs) | Represents an Isotope of a certain Element (6500+ isotopes)
+[Isotope](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/Isotope.cs) | [Isotopes](https://github.com/Sejoslaw/Chemistry.NET/blob/master/Chemistry.NET/Elements/Models/CommonIsotopes.cs) | Represents an Isotope of a certain Element (6500+ isotopes)
 
 </br>
 

@@ -52,26 +52,27 @@ namespace Chemistry.NET.Tests
             Assert.Equal(input, str);
         }
         
-        [Theory]
-        [InlineData("H-H")]
-        [InlineData("(H)2-O")]
-        [InlineData("(H)4-C")]
-        [InlineData("(H)2-C=C-(H)2")]
-        [InlineData("(H)2-C-(OH)2")]
-        [InlineData("(Li)2-O-(C=Pb-C-(H)2)-(O=C)")]
-        [InlineData("O|10|H")]
-        [InlineData("O|10|(H)2")]
-        [InlineData("Li|10|H")]
-        [InlineData("Li|10|(H)192")]
-        [InlineData("(Li)2-O-(C=Pb-C-(H)2)-(O|8|C)")]
-        [InlineData("(Li)2-O-(C=Pb-C|10|(H)2-O)-(O=C)")]
-        public void Should_parse_ChemicalCompound_using_LewisChemicalCompoundParser(string input)
-        {
-            var parser = new LewisChemicalCompoundParser();
-            var compound = parser.Read(input);
-            var str = parser.Write(compound);
-            
-            Assert.Equal(input, str);
-        }
+        // ----==== WIP ====----
+        // [Theory]
+        // [InlineData("H-H")]
+        // [InlineData("(H)2-O")]
+        // [InlineData("(H)4-C")]
+        // [InlineData("(H)2-C=C-(H)2")]
+        // [InlineData("(H)2-C-(OH)2")]
+        // [InlineData("(Li)2-O-(C=Pb-C-(H)2)-(O=C)")]
+        // [InlineData("O|10|H")]
+        // [InlineData("O|10|(H)2")]
+        // [InlineData("Li|10|H")]
+        // [InlineData("Li|10|(H)192")]
+        // [InlineData("(Li)2-O-(C=Pb-C-(H)2)-(O|8|C)")]
+        // [InlineData("(Li)2-O-(C=Pb-C|10|(H)2-O)-(O=C)")]
+        // public void Should_parse_ChemicalCompound_using_LewisChemicalCompoundParser(string input)
+        // {
+        //     var parser = new LewisChemicalCompoundParser();
+        //     var compound = parser.Read(input);
+        //     var str = parser.Write(compound);
+        //     
+        //     Assert.Equal(input, str);
+        // }
     }
 }

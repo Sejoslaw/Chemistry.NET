@@ -9,7 +9,7 @@ namespace Chemistry.NET.Elements.Models
     /// <summary>
     /// Container for known Isotopes.
     /// </summary>
-    public static class Isotopes
+    public static class CommonIsotopes
     {
         // Hydrogen
 
