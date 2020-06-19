@@ -4,9 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using Chemistry.NET.Elements.Models;
-
-namespace Chemistry.NET.Ions.Models
+namespace Chemistry.NET.Elements.Models
 {
     /// <summary>
     /// Represents an Element with a net electrical charge.
