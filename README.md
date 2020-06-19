@@ -81,3 +81,64 @@ Or check it directly on [NuGet Gallery](https://www.nuget.org/packages/Chemistry
 ## 5. License
 
 [Click Me](https://github.com/Sejoslaw/Chemistry.NET/blob/master/LICENSE)
+
+</br>
+
+## 6. How to start
+
+### 6.1. Use all registered Elements
+```csharp
+using Chemistry.NET.Common;
+
+// ...
+
+// Perform some work for each registered Element
+// Container contains information about all currently supported types:
+// i.e. Particles, Elements, Common Compounds, etc.
+foreach (var element in Container.Elements)
+{
+  // Do some work
+}
+```
+
+### 6.2. If the element is Hydrogen do some work
+```csharp
+using Chemistry.NET.Elements.Models;
+
+// ...
+
+IEnumerable<Element> myElements;
+// Initialize myElements
+
+foreach (var element in myElements)
+{
+  if (element == CommonElements.Hydrogen)
+  {
+    // Do some work
+  }
+}
+```
+
+### 6.3. Parse Hydrogen electron shells
+```csharp
+using Chemistry.NET.Elements.Models;
+using Chemistry.NET.Elements.Parsers.ElectronConfigurations;
+
+ElectronConfiguration electronConfiguration = CommonElements.Hydrogen.ElectronConfiguration;
+IEnumerable<ElectronShellData> shellsData = ElectronConfigurationParser.Parse(electronConfiguration);
+
+// Do some logic with parsed shells data
+```
+
+### 6.4. Parse new Chemical Compound
+```csharp
+using Chemistry.NET.Compounds.Models;
+using Chemistry.NET.Compounds.Parsers.ChemicalCompounds;
+
+// Way #1 use the parser directly
+ChemicalCompound compound1 = new CondensedChemicalCompoundParser().Read("H2O");
+
+// Way #2 use the Chemical Compound initializing method
+// In this example we can set the chemical name of the compound (second parameter)
+ChemicalCompound compound2 = ChemicalCompound.New("H2O", "Water");
+```
