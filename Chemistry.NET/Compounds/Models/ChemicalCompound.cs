@@ -5,7 +5,6 @@
 /// </summary>
 
 using Chemistry.NET.Compounds.Collections;
-using Chemistry.NET.Compounds.Parsers.ChemicalCompounds;
 
 namespace Chemistry.NET.Compounds.Models
 {
@@ -34,25 +33,6 @@ namespace Chemistry.NET.Compounds.Models
         internal ChemicalCompound(string formula)
         {
             Formula = formula;
-        }
-        
-        /// <summary>
-        /// Static method for creating new Compounds.
-        /// </summary>
-        /// <param name="chemicalCompound"> Formula to parse </param>
-        /// <param name="chemicalName"> Chemical name of the Compound </param>
-        /// <param name="commonName"> Common name of the Compound </param>
-        /// <param name="parser"> Parser uses to parse the Compound. By default it will use CondensedChemicalCompoundParser as a parser. </param>
-        /// <returns></returns>
-        public static ChemicalCompound New(string chemicalCompound, string chemicalName, IChemicalCompoundParser parser = null)
-        {
-            parser ??= new CondensedChemicalCompoundParser();
-
-            var compound = parser.Read(chemicalCompound);
-            compound.Formula = chemicalCompound;
-            compound.ChemicalName = chemicalName;
-
-            return compound;
         }
     }
 }

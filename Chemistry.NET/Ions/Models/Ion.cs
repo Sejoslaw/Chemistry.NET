@@ -13,7 +13,7 @@ namespace Chemistry.NET.Ions.Models
     {
         public IIonizable Ionizable { get; }
         public int OxidationState { get; }
-
+        
         public Ion(IIonizable ionizable, int oxidationState)
         {
             Ionizable = ionizable;
