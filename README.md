@@ -10,8 +10,8 @@ Layer | Name | Description
 1 | Particles | This is the base layer and it describes anything that relates to particles. As it is the lowest layer it should be independent from any other layer. (140+ particles preconfigured)
 2 | Elements | This layer lays on top of the Particles layer. It describes everything about core, known elements with their properties and functionality. (118 elements preconfigured)
 2 | Isotopes | Contains information about known isotopes and their properties. (6500+ isotopes preconfigured)
-2 | Ions | Describes ionization functionality for each of the elements. (540+ ions preconfigured)
 3 | Compounds | This is a higher-level layer which let's user build advanced compounds from known elements and isotopes. (2400+ compounds preconfigured)
+3 | Ions | Describes ionization functionality for each of the elements. (540+ ions preconfigured)
 X | Molecules | TBA
 X | Lipids | TBA
 X | Steroids | TBA

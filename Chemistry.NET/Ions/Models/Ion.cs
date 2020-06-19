@@ -4,19 +4,19 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-namespace Chemistry.NET.Elements.Models
+namespace Chemistry.NET.Ions.Models
 {
     /// <summary>
     /// Represents an Element with a net electrical charge.
     /// </summary>
     public class Ion
     {
-        public Element Element { get; }
+        public IIonizable Ionizable { get; }
         public int OxidationState { get; }
 
-        public Ion(Element element, int oxidationState)
+        public Ion(IIonizable ionizable, int oxidationState)
         {
-            Element = element;
+            Ionizable = ionizable;
             OxidationState = oxidationState;
         }
     }
