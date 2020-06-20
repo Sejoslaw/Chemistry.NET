@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System.Collections.Generic;
+
 namespace Chemistry.NET.Compounds.Collections
 {
     /// <summary>
@@ -21,5 +23,25 @@ namespace Chemistry.NET.Compounds.Collections
         /// </summary>
         /// <param name="count"></param>
         void IncreaseStackSize(int count = 1);
+        /// <summary>
+        /// Returns the number of electrons in the stack.
+        /// </summary>
+        /// <returns></returns>
+        int GetTotalElectronsCount();
+        /// <summary>
+        /// Returns the number of protons in the stack.
+        /// </summary>
+        /// <returns></returns>
+        int GetTotalProtonsCount();
+        /// <summary>
+        /// Returns the number of neutrons in the stack.
+        /// </summary>
+        /// <returns></returns>
+        int GetTotalNeutronsCount();
+        /// <summary>
+        /// Returns the total amount of stacks on the current stack.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<ElementStack> GetAtoms();
     }
 }

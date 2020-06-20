@@ -4,6 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System.Collections.Generic;
 using Chemistry.NET.Elements.Models;
 
 namespace Chemistry.NET.Compounds.Collections
@@ -32,6 +33,26 @@ namespace Chemistry.NET.Compounds.Collections
         public virtual void IncreaseStackSize(int count = 1)
         {
             Count += count;
+        }
+
+        public int GetTotalElectronsCount()
+        {
+            return Element.Structure.ElectronsCount * Count;
+        }
+
+        public int GetTotalProtonsCount()
+        {
+            return Element.Structure.ProtonsCount * Count;
+        }
+
+        public int GetTotalNeutronsCount()
+        {
+            return Element.Structure.NeutronsCount * Count;
+        }
+
+        public IEnumerable<ElementStack> GetAtoms()
+        {
+            yield return this;
         }
     }
 }

@@ -12,7 +12,7 @@ Layer | Name | Description
 2 | Isotopes | Contains information about known isotopes and their properties. (6500+ isotopes preconfigured)
 3 | Compounds | This is a higher-level layer which let's user build advanced compounds from known elements and isotopes. (2400+ compounds preconfigured)
 3 | Ions | Describes ionization functionality for each of the elements. (540+ ions preconfigured)
-X | Molecules | TBA
+4 | Molecules | Contains information which can be used to indicate Molecule-related properties for a Chemical Compound.
 X | Lipids | TBA
 X | Steroids | TBA
 X | Polymers | TBA

@@ -4,10 +4,9 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
-using System;
+using System.Collections.Generic;
 using Chemistry.NET.Compounds.Collections;
 using Chemistry.NET.Compounds.Parsers.ChemicalCompounds;
-using Chemistry.NET.Elements.Models;
 
 namespace Chemistry.NET.Compounds.Models
 {
@@ -16,38 +15,24 @@ namespace Chemistry.NET.Compounds.Models
     /// </summary>
     public partial class ChemicalCompound
     {
+        public IEnumerable<ElementStack> GetAtoms()
+        {
+            return StructureTree.GetAtoms();
+        }
+
         public int GetTotalElectronsCount()
         {
-            return GetTotalCount(e => e.Structure.ElectronsCount);
+            return StructureTree.GetTotalElectronsCount();
         }
 
         public int GetTotalProtonsCount()
         {
-            return GetTotalCount(e => e.Structure.ProtonsCount);
+            return StructureTree.GetTotalProtonsCount();
         }
 
         public int GetTotalNeutronsCount()
         {
-            return GetTotalCount(e => e.Structure.NeutronsCount);
-        }
-
-        private int GetTotalCount(Func<Element, int> func)
-        {
-            var total = 0;
-
-            foreach (var node in StructureTree)
-            {
-                if (node is ElementStack elementStack)
-                {
-                    total += func(elementStack.Element) * elementStack.Count;
-                }
-                else if (node is CompoundStack compoundStack)
-                {
-                    total += GetTotalCount(func) * compoundStack.Count;
-                }
-            }
-
-            return total;
+            return StructureTree.GetTotalNeutronsCount();
         }
 
         /// <summary>
