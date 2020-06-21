@@ -35,6 +35,11 @@ namespace Chemistry.NET.Compounds.Models
             return StructureTree.GetTotalNeutronsCount();
         }
 
+        public bool AreAtomsCountEqual(ChemicalCompound compound)
+        {
+            return StructureTree.AreAtomsCountEqual(compound.StructureTree);
+        }
+
         /// <summary>
         /// Static method for creating new Compounds.
         /// </summary>

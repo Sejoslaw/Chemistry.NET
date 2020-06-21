@@ -44,5 +44,17 @@ namespace Chemistry.NET.Tests
             Assert.Equal(compound.GetTotalProtonsCount(), protons);
             Assert.Equal(compound.GetAtoms().Count(), atoms);
         }
+
+        [Theory]
+        [InlineData("H2O", "OH2")]
+        [InlineData("CH(CH4)2", "(CH4)2CH")]
+        [InlineData("((CH3)2)4O2", "C6H20O2(CH2)2")]
+        public void Should_contain_the_same_atoms(string symbol1, string symbol2)
+        {
+            var compound1 = ChemicalCompound.New(symbol1, "");
+            var compound2 = ChemicalCompound.New(symbol2, "");
+
+            Assert.True(compound1.AreIsomers(compound2));
+        }
     }
 }

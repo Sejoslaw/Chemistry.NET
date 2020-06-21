@@ -4,6 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
 using System.Collections.Generic;
 using Chemistry.NET.Elements.Models;
 
@@ -12,7 +13,7 @@ namespace Chemistry.NET.Compounds.Collections
     /// <summary>
     /// Represents and Stack of a single Element.
     /// </summary>
-    public partial class ElementStack : IChemicalStack
+    public partial class ElementStack : IChemicalStack, IEquatable<ElementStack>
     {
         /// <summary>
         /// Element stored on Stack.
@@ -53,6 +54,27 @@ namespace Chemistry.NET.Compounds.Collections
         public IEnumerable<ElementStack> GetAtoms()
         {
             yield return this;
+        }
+
+        public bool AreAtomsCountEqual(IChemicalStack stack)
+        {
+            if (stack is ElementStack elementStack)
+            {
+                return Equals(elementStack);
+            }
+            else if (stack is CompoundStack compoundStack && 
+                     compoundStack.Nodes.Count == 1 && 
+                     compoundStack.Nodes[0] is ElementStack innerElementStack)
+            {
+                return Equals(innerElementStack);
+            }
+
+            return false;
+        }
+
+        public bool Equals(ElementStack other)
+        {
+            return Element == other.Element && Count == other.Count;
         }
     }
 }

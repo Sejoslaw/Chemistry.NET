@@ -22,5 +22,16 @@ namespace Chemistry.NET.Compounds.Models
                         (atoms.Count() == 2 && atoms.ElementAt(0).Count == 1 && atoms.ElementAt(1).Count == 1);
             }
         }
+
+        public bool AreIsomers(IMolecule molecule)
+        {
+            if (!(molecule is ChemicalCompound))
+            {
+                return false;
+            }
+
+            var compound = molecule as ChemicalCompound;
+            return AreAtomsCountEqual(compound);
+        }
     }
 }

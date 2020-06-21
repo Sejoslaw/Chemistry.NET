@@ -27,5 +27,13 @@ namespace Chemistry.NET.Molecules
         /// </summary>
         /// <value></value>
         bool IsDiatomic { get; }
+        
+        /// <summary>
+        /// Returns true if the given molecule is an Isomer of the current molecule.
+        /// Molecules with the same atoms in different arrangements are called isomers.
+        /// </summary>
+        /// <param name="molecule"></param>
+        /// <returns></returns>
+        bool AreIsomers(IMolecule molecule);
     }
 }

@@ -43,5 +43,11 @@ namespace Chemistry.NET.Compounds.Collections
         /// </summary>
         /// <returns></returns>
         IEnumerable<ElementStack> GetAtoms();
+        /// <summary>
+        /// Returns true if the count of atoms are equal; otherwise false.
+        /// </summary>
+        /// <param name="stack"></param>
+        /// <returns></returns>
+        bool AreAtomsCountEqual(IChemicalStack stack);
     }
 }

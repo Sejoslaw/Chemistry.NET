@@ -48,11 +48,71 @@ namespace Chemistry.NET.Compounds.Collections
                 else if (node is CompoundStack compoundStack)
                 {
                     var innerStacks = compoundStack.GetAtoms();
-                    innerStacks.ToList().ForEach(innerStack => AppendToAppropriateStack(stacks, innerStack));
+                    innerStacks.ToList().ForEach(innerStack =>
+                    {
+                        if (compoundStack.Count > 1)
+                        {
+                            var newInnerStackCount = innerStack.Count * compoundStack.Count;
+                            innerStack.IncreaseStackSize(- innerStack.Count);
+                            innerStack.IncreaseStackSize(newInnerStackCount);
+                        }
+                        
+                        AppendToAppropriateStack(stacks, innerStack);
+                    });
                 }
             }
 
             return stacks;
+        }
+
+        public bool AreAtomsCountEqual(IChemicalStack stack)
+        {
+            if (stack is ElementStack elementStack &&
+                Nodes.Count == 1 &&
+                Nodes[0] is ElementStack innerElementStack)
+            {
+                return innerElementStack.Equals(elementStack);
+            }
+            else if (stack is CompoundStack compoundStack)
+            {
+                return ContainsTheSameAtoms(compoundStack);
+            }
+
+            return false;
+        }
+
+        public bool ContainsTheSameAtoms(CompoundStack stack)
+        {
+            var atoms = GetAtoms();
+            var stackAtoms = stack.GetAtoms();
+
+            if (atoms.Count() != stackAtoms.Count())
+            {
+                return false;
+            }
+
+            foreach (var stackAtom in stackAtoms)
+            {
+                if (!ContainsTheSameAtom(atoms, stackAtom))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public bool ContainsTheSameAtom(IEnumerable<ElementStack> stacks, ElementStack elementStack)
+        {
+            foreach (var stack in stacks)
+            {
+                if (stack.Equals(elementStack))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public int GetTotalElectronsCount()
