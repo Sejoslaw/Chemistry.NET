@@ -72,6 +72,12 @@ namespace Chemistry.NET.Compounds.Collections
             return false;
         }
 
+        public bool ContainsBond(params Element[] elements)
+        {
+            // ElementStack contains always only one Element so there are no bonds anyway.
+            return false;
+        }
+
         public bool Equals(ElementStack other)
         {
             return Element == other.Element && Count == other.Count;

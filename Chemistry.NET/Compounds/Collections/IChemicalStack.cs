@@ -5,6 +5,7 @@
 /// </summary>
 
 using System.Collections.Generic;
+using Chemistry.NET.Elements.Models;
 
 namespace Chemistry.NET.Compounds.Collections
 {
@@ -49,5 +50,11 @@ namespace Chemistry.NET.Compounds.Collections
         /// <param name="stack"></param>
         /// <returns></returns>
         bool AreAtomsCountEqual(IChemicalStack stack);
+        /// <summary>
+        /// Returns true if the current Stack contains a bond between specified Elements; otherwise false.
+        /// </summary>
+        /// <param name="elements"></param>
+        /// <returns></returns>
+        bool ContainsBond(params Element[] elements);
     }
 }

@@ -7,6 +7,7 @@
 using System.Collections.Generic;
 using Chemistry.NET.Compounds.Collections;
 using Chemistry.NET.Compounds.Parsers.ChemicalCompounds;
+using Chemistry.NET.Elements.Models;
 
 namespace Chemistry.NET.Compounds.Models
 {
@@ -39,6 +40,11 @@ namespace Chemistry.NET.Compounds.Models
         {
             return StructureTree.AreAtomsCountEqual(compound.StructureTree);
         }
+        
+        public bool ContainsBond(params Element[] elements)
+        {
+            return StructureTree.ContainsBond(elements);
+        }
 
         /// <summary>
         /// Static method for creating new Compounds.
@@ -48,7 +54,7 @@ namespace Chemistry.NET.Compounds.Models
         /// <param name="commonName"> Common name of the Compound </param>
         /// <param name="parser"> Parser uses to parse the Compound. By default it will use CondensedChemicalCompoundParser as a parser. </param>
         /// <returns></returns>
-        public static ChemicalCompound New(string chemicalCompound, string chemicalName, IChemicalCompoundParser parser = null)
+        public static ChemicalCompound New(string chemicalCompound, string chemicalName = "", IChemicalCompoundParser parser = null)
         {
             parser ??= new CondensedChemicalCompoundParser();
 

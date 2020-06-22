@@ -115,6 +115,20 @@ namespace Chemistry.NET.Compounds.Collections
             return false;
         }
 
+        public bool ContainsBond(params Element[] elements)
+        {
+            var elementStacks = Nodes.OfType<ElementStack>().ToList();
+
+            if (elements.All(element => elementStacks.FirstOrDefault(stack => stack.Element == element) != null))
+            {
+                return true;
+            }
+
+            var compoundStacks = Nodes.OfType<CompoundStack>().ToList();
+
+            return compoundStacks.Any(stack => stack.ContainsBond(elements));
+        }
+
         public int GetTotalElectronsCount()
         {
             return GetTotalCount(e => e.Structure.ElectronsCount);
