@@ -56,5 +56,6 @@ namespace Chemistry.NET.Compounds.Collections
         /// <param name="elements"></param>
         /// <returns></returns>
         bool ContainsBond(params Element[] elements);
+        // TODO: Add method for checking multiple number of bonds as well as the other for checking the number of connections in bond.
     }
 }
