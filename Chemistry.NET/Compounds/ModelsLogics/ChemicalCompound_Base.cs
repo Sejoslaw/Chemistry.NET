@@ -16,37 +16,37 @@ namespace Chemistry.NET.Compounds.Models
     /// </summary>
     public partial class ChemicalCompound
     {
-        public IEnumerable<ElementStack> GetAtoms()
+        public virtual IEnumerable<ElementStack> GetAtoms()
         {
             return StructureTree.GetAtoms();
         }
 
-        public int GetTotalElectronsCount()
+        public virtual int GetTotalElectronsCount()
         {
             return StructureTree.GetTotalElectronsCount();
         }
 
-        public int GetTotalProtonsCount()
+        public virtual int GetTotalProtonsCount()
         {
             return StructureTree.GetTotalProtonsCount();
         }
 
-        public int GetTotalNeutronsCount()
+        public virtual int GetTotalNeutronsCount()
         {
             return StructureTree.GetTotalNeutronsCount();
         }
 
-        public bool AreAtomsCountEqual(ChemicalCompound compound)
+        public virtual bool AreAtomsCountEqual(ChemicalCompound compound)
         {
             return StructureTree.AreAtomsCountEqual(compound.StructureTree);
         }
         
-        public bool ContainsBond(params Element[] elements)
+        public virtual bool ContainsBond(params Element[] elements)
         {
             return StructureTree.ContainsBond(elements);
         }
 
-        public bool ContainsBond(params ElementStack[] stacks)
+        public virtual bool ContainsBond(params ElementStack[] stacks)
         {
             return StructureTree.ContainsBond(stacks);
         }

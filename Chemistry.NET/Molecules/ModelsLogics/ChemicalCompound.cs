@@ -23,7 +23,7 @@ namespace Chemistry.NET.Compounds.Models
             }
         }
 
-        public bool AreIsomers(IMolecule molecule)
+        public virtual bool AreIsomers(IMolecule molecule)
         {
             if (!(molecule is ChemicalCompound))
             {
