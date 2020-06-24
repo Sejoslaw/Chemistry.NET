@@ -67,5 +67,39 @@ namespace Chemistry.NET.Tests
             
             Assert.Equal(compound.IsOrganic, isOrganic);
         }
+
+        [Theory]
+        [InlineData("H2O", true)]
+        [InlineData("C2(OH)2", true)]
+        [InlineData("LiOC", false)]
+        public void Should_contain_hydroxy_group(string compoundSymbol, bool hasHydroxyGroup)
+        {
+            var compound = ChemicalCompound.New(compoundSymbol);
+
+            Assert.Equal(compound.HasHydroxyGroup, hasHydroxyGroup);
+        }
+
+        [Theory]
+        [InlineData("NH2", true)]
+        [InlineData("C2(NH2)2", true)]
+        [InlineData("LiNC", false)]
+        public void Should_contain_amino_group(string compoundSymbol, bool hasAminoGroup)
+        {
+            var compound = ChemicalCompound.New(compoundSymbol);
+
+            Assert.Equal(compound.HasAminoGroup, hasAminoGroup);
+        }
+
+        [Theory]
+        [InlineData("C6H5", true)]
+        [InlineData("(C6H5)2", true)]
+        [InlineData("C2(C6H5)2", true)]
+        [InlineData("LiNC5H5", false)]
+        public void Should_contain_phenyl_group(string compoundSymbol, bool hasPhenylGroup)
+        {
+            var compound = ChemicalCompound.New(compoundSymbol);
+
+            Assert.Equal(compound.HasPhenylGroup, hasPhenylGroup);
+        }
     }
 }
