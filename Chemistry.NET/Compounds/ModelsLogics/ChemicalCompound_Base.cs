@@ -46,6 +46,11 @@ namespace Chemistry.NET.Compounds.Models
             return StructureTree.ContainsBond(elements);
         }
 
+        public bool ContainsBond(params ElementStack[] stacks)
+        {
+            return StructureTree.ContainsBond(stacks);
+        }
+
         /// <summary>
         /// Static method for creating new Compounds.
         /// </summary>

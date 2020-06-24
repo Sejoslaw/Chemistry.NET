@@ -117,16 +117,12 @@ namespace Chemistry.NET.Compounds.Collections
 
         public bool ContainsBond(params Element[] elements)
         {
-            var elementStacks = Nodes.OfType<ElementStack>().ToList();
+            return ContainsBond(elements, (element, stack) => stack.Element == element);
+        }
 
-            if (elements.All(element => elementStacks.FirstOrDefault(stack => stack.Element == element) != null))
-            {
-                return true;
-            }
-
-            var compoundStacks = Nodes.OfType<CompoundStack>().ToList();
-
-            return compoundStacks.Any(stack => stack.ContainsBond(elements));
+        public bool ContainsBond(params ElementStack[] stacks)
+        {
+            return ContainsBond(stacks, (stack, localStack) => localStack.Equals(stack));
         }
 
         public int GetTotalElectronsCount()
@@ -175,6 +171,20 @@ namespace Chemistry.NET.Compounds.Collections
             }
 
             stacks.Add(elementStack);
+        }
+
+        private bool ContainsBond<T>(IEnumerable<T> objects, Func<T, ElementStack, bool> func)
+        {
+            var elementStacks = Nodes.OfType<ElementStack>().ToList();
+
+            if (objects.All(stack => elementStacks.FirstOrDefault(localStack => func(stack, localStack)) != null))
+            {
+                return true;
+            }
+
+            var compoundStacks = Nodes.OfType<CompoundStack>().ToList();
+
+            return compoundStacks.Any(stack => stack.ContainsBond(objects, func));
         }
     }
 }
