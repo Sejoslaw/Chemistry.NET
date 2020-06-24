@@ -4,6 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
 using System.Collections.Generic;
 using Chemistry.NET.Elements.Models;
 
@@ -18,6 +19,11 @@ namespace Chemistry.NET.Compounds.Collections
         /// Number of items on the Stack.
         /// </summary>
         int Count { get; }
+        /// <summary>
+        /// Unique Identifier of the Stack.
+        /// </summary>
+        /// <value></value>
+        Guid StackId { get; }
 
         /// <summary>
         /// Increases / Decreases the amount of items on the current Stack.

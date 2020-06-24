@@ -20,6 +20,7 @@ namespace Chemistry.NET.Compounds.Collections
         /// </summary>
         public Element Element { get; }
         public int Count { get; private set; }
+        public Guid StackId { get; } = Guid.NewGuid();
 
         public ElementStack(Element element, int count = 1)
         {

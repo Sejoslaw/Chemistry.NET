@@ -19,6 +19,7 @@ namespace Chemistry.NET.Compounds.Collections
     {
         internal List<IChemicalStack> Nodes { get; } = new List<IChemicalStack>();
         public int Count { get; internal set; }
+        public Guid StackId { get; } = Guid.NewGuid();
         
         public void IncreaseStackSize(int count = 1)
         {
