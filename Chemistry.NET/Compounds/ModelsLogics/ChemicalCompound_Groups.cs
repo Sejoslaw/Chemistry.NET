@@ -11,5 +11,6 @@ namespace Chemistry.NET.Compounds.Models
     public partial class ChemicalCompound
     {
         public bool HasHydroxyGroup => ContainsBond(CommonElements.Oxygen, CommonElements.Hydrogen);
+        public bool HasAminoGroup => ContainsBond(CommonElements.Nitrogen.ToStack(), CommonElements.Hydrogen.ToStack(2));
     }
 }
