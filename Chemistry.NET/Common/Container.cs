@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Chemistry.NET.Compounds.Models;
 using Chemistry.NET.Elements.Models;
+using Chemistry.NET.Graphs.Models;
 using Chemistry.NET.Ions.Models;
 using Chemistry.NET.Particles.Models;
 
@@ -29,6 +30,8 @@ namespace Chemistry.NET.Common
         public static IList<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(CommonIsotopes)); 
         public static IList<ChemicalCompound> CommonCompounds { get; } = GetAll<ChemicalCompound>(typeof(CommonCompounds));
         public static IList<Ion> Ions { get; } = GetAll<Ion>(typeof(CommonIons));
+        public static IList<MolecularShape> MolecularShapes { get; } = GetAll<MolecularShape>(typeof(MolecularShapes));
+        public static IList<BondAngle> BondAngles { get; } = GetAll<BondAngle>(typeof(BondAngles));
 
         public static IList<Isotope> MonoisotopicElements { get; } = new List<Isotope>
         {
