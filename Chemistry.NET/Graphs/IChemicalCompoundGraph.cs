@@ -5,6 +5,7 @@
 /// </summary>
 
 using Chemistry.NET.Compounds.Models;
+using System.Collections.Generic;
 
 namespace Chemistry.NET.Graphs
 {
@@ -14,13 +15,18 @@ namespace Chemistry.NET.Graphs
     public interface IChemicalCompoundGraph
     {
         /// <summary>
-        /// Chemical Compound described by the current graph
+        /// Chemical Compound described by the current Graph.
         /// </summary>
         /// <value></value>
         ChemicalCompound Compound { get; }
+        /// <summary>
+        /// Collection of Connections inside the Graph.
+        /// </summary>
+        /// <value></value>
+        IEnumerable<IChemicalCompoundGraphConnection> Connections { get; }
 
         /// <summary>
-        /// Initialize the generation of the graph.
+        /// Initialize the generation of the Graph.
         /// </summary>
         void Generate();
     }

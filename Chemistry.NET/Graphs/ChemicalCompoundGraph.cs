@@ -4,6 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System.Collections.Generic;
 using Chemistry.NET.Compounds.Models;
 
 namespace Chemistry.NET.Graphs
@@ -11,6 +12,7 @@ namespace Chemistry.NET.Graphs
     public class ChemicalCompoundGraph : IChemicalCompoundGraph
     {
         public ChemicalCompound Compound { get; }
+        public IEnumerable<IChemicalCompoundGraphConnection> Connections { get; } = new List<IChemicalCompoundGraphConnection>();
         
         public ChemicalCompoundGraph(ChemicalCompound chemicalCompound)
         {
@@ -18,7 +20,7 @@ namespace Chemistry.NET.Graphs
         }
 
         /// <summary>
-        /// Generates graph from specified Chemical Compound.
+        /// Generates graph from current Chemical Compound.
         /// </summary>
         public void Generate()
         {

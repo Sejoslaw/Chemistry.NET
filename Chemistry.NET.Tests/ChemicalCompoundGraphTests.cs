@@ -4,6 +4,7 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System.Linq;
 using Chemistry.NET.Compounds.Models;
 using Xunit;
 
@@ -20,7 +21,7 @@ namespace Chemistry.NET.Tests
             var compound = ChemicalCompound.New(compoundSymbol);
             var graph = compound.GenerateGraph();
 
-            // Assert.Equal(graph.Connections?, connectionsCount)
+            Assert.Equal(graph.Connections.Count(), connectionsCount);
         }
     }
 }
