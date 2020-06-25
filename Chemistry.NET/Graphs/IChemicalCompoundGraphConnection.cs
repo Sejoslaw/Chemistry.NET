@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
+
 namespace Chemistry.NET.Graphs
 {
     /// <summary>
@@ -11,6 +13,11 @@ namespace Chemistry.NET.Graphs
     /// </summary>
     public interface IChemicalCompoundGraphConnection
     {
+        /// <summary>
+        /// Unique Identifier of the current connection.
+        /// </summary>
+        /// <value></value>
+        Guid ConnectionId { get; }
         /// <summary>
         /// Graph to which the current connection belongs.
         /// </summary>

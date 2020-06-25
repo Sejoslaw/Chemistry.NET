@@ -13,6 +13,7 @@ namespace Chemistry.NET.Graphs
     {
         public ChemicalCompound Compound { get; }
         public IEnumerable<IChemicalCompoundGraphConnection> Connections { get; } = new List<IChemicalCompoundGraphConnection>();
+        public IEnumerable<IChemicalCompoundGraphAngle> Angles { get; } = new List<IChemicalCompoundGraphAngle>();
         
         public ChemicalCompoundGraph(ChemicalCompound chemicalCompound)
         {

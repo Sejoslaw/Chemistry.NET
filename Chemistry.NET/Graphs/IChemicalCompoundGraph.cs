@@ -24,6 +24,11 @@ namespace Chemistry.NET.Graphs
         /// </summary>
         /// <value></value>
         IEnumerable<IChemicalCompoundGraphConnection> Connections { get; }
+        /// <summary>
+        /// Angles inside the Graph.
+        /// </summary>
+        /// <value></value>
+        IEnumerable<IChemicalCompoundGraphAngle> Angles { get; }
 
         /// <summary>
         /// Initialize the generation of the Graph.

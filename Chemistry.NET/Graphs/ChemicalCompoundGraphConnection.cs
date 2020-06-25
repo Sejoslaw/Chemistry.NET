@@ -4,10 +4,13 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
+
 namespace Chemistry.NET.Graphs
 {
     public class ChemicalCompoundGraphConnection : IChemicalCompoundGraphConnection
     {
+        public Guid ConnectionId { get; } = Guid.NewGuid();
         public IChemicalCompoundGraph Graph { get; }
         public IChemicalCompoundGraphNode Parent { get; }
         public IChemicalCompoundGraphNode Child { get; }
