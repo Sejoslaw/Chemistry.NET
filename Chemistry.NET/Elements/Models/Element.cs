@@ -4,6 +4,8 @@
 /// Source: https://github.com/Sejoslaw/Chemistry.NET
 /// </summary>
 
+using System;
+
 namespace Chemistry.NET.Elements.Models
 {
     /// <summary>
@@ -11,6 +13,12 @@ namespace Chemistry.NET.Elements.Models
     /// </summary>
     public partial class Element
     {
+        /// <summary>
+        /// Returns the Unique Identifier of the Element object.
+        /// </summary>
+        /// <returns></returns>
+        public Guid ElementId { get; } = Guid.NewGuid();
+
         public int AtomicNumber { get; }
         public string Symbol { get; }
         public string Name { get; }
