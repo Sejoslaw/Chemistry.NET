@@ -19,7 +19,7 @@ namespace Chemistry.NET.Compounds.Parsers.ChemicalCompounds
     {
         protected override void WriteTree(StringBuilder builder, CompoundStack root)
         {
-            foreach (var node in root)
+            foreach (var node in root.Nodes)
             {
                 var numberOfAtoms = node.Count > 1 ? node.Count.ToString() : "";
                 if (node is ElementStack elementStack)

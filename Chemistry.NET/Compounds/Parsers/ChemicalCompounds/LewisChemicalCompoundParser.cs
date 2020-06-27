@@ -188,7 +188,7 @@ namespace Chemistry.NET.Compounds.Parsers.ChemicalCompounds
 
         private static void AddStackToRoot(CompoundStack root, ElementStack stack)
         {
-            foreach (var node in root)
+            foreach (var node in root.Nodes)
             {
                 if (!(node is ElementStack elementStack) ||
                     elementStack.Element != stack.Element)
