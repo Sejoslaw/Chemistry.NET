@@ -15,7 +15,7 @@ namespace Chemistry.NET.Compounds.Collections
     /// <summary>
     /// Represents an information of how the Chemical Compound is build.
     /// </summary>
-    public partial class CompoundStack : IChemicalStack, IEnumerable<IChemicalStack>
+    public partial class CompoundStack : IChemicalStack
     {
         internal List<IChemicalStack> Nodes { get; } = new List<IChemicalStack>();
         public int Count { get; internal set; }
@@ -24,16 +24,6 @@ namespace Chemistry.NET.Compounds.Collections
         public void IncreaseStackSize(int count = 1)
         {
             Count += count;
-        }
-
-        public IEnumerator<IChemicalStack> GetEnumerator()
-        {
-            return Nodes.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
         }
 
         public IEnumerable<ElementStack> GetAtoms()
