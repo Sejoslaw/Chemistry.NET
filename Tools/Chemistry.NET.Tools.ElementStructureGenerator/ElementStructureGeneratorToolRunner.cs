@@ -7,7 +7,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Chemistry.NET.Common;
 using Chemistry.NET.Tools.Common;
 using Chemistry.NET.Tools.Common.Models;
@@ -20,7 +19,7 @@ namespace Chemistry.NET.Tools.ElementStructureGenerator
         /// <summary>
         /// TODO: Add missing valence electron information.
         /// </summary>
-        private IDictionary<string, int> ValenceElectrons { get; } = new Dictionary<string, int>()
+        private IDictionary<string, int> ValenceElectrons { get; } = new Dictionary<string, int>
         {
             {"Cesium", 8},
             {"Aluminum", 3},
@@ -161,11 +160,11 @@ namespace Chemistry.NET.Tools.ElementStructureGenerator
                    $"new ElementStructure(\"{ elementName }\", { protonsCount }, { electronsCount }, { neutronsCount }, { valenceNeutronsCount });";
         }
         
-        private string GetValueFromNode(IWebDriver driver, string node)
+        private static string GetValueFromNode(IWebDriver driver, string node)
         {
             return ((IJavaScriptExecutor)driver)
                 .ExecuteScript($"return document.evaluate(\"{ node }\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.nextSibling.nodeValue")
-                .ToString()
+                .ToString()?
                 .Replace(" ", "")
                 .Replace(Environment.NewLine, "");
         }

@@ -27,7 +27,9 @@ namespace Chemistry.NET.Tests
                 Assert.Equal(stack.GetTotalElectronsCount(), element.Structure.ElectronsCount * randomElementNumberOnStack);
                 Assert.Equal(stack.GetTotalNeutronsCount(), element.Structure.NeutronsCount * randomElementNumberOnStack);
                 Assert.Equal(stack.GetTotalProtonsCount(), element.Structure.ProtonsCount * randomElementNumberOnStack);
-                Assert.Equal(stack.GetAtoms().Count(), 1);
+
+                var count = stack.GetAtoms().Count();
+                Assert.Equal(1, count);
             }
         }
 
