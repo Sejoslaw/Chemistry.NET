@@ -14,23 +14,26 @@ using Chemistry.NET.Particles.Models;
 
 namespace Chemistry.NET.Common
 {
+    /// <summary>
+    /// Contains all preconfigured objects.
+    /// </summary>
     public static class Container
     {
         // --== Properties ==--
         
-        public static IList<Particle> Particles { get; } = GetAll<Particle>(typeof(CommonParticles));
-        public static IList<ElectronShell> ElectronShells { get; } = GetAll<ElectronShell>(typeof(ElectronShells));
-        public static IList<Element> Elements { get; } = GetAll<Element>(typeof(CommonElements));
-        public static IList<ElementType> ElementTypes { get; } = GetAll<ElementType>(typeof(ElementTypes));
-        public static IList<PeriodicTableElement> PeriodicTableElements { get; } = GetAll<PeriodicTableElement>(typeof(PeriodicTable));
-        public static IList<PeriodicTableGroup> PeriodicTableGroups { get; } = GetAll<PeriodicTableGroup>(typeof(PeriodicTableGroups));
-        public static IList<PhysicalState> PhysicalStates { get; } = GetAll<PhysicalState>(typeof(PhysicalStates));
-        public static IList<ElementStructure> ElementStructures { get; } = GetAll<ElementStructure>(typeof(ElementStructures));
-        public static IList<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(CommonIsotopes)); 
-        public static IList<ChemicalCompound> CommonCompounds { get; } = GetAll<ChemicalCompound>(typeof(CommonCompounds));
-        public static IList<Ion> Ions { get; } = GetAll<Ion>(typeof(CommonIons));
+        public static IEnumerable<Particle> Particles { get; } = GetAll<Particle>(typeof(CommonParticles));
+        public static IEnumerable<ElectronShell> ElectronShells { get; } = GetAll<ElectronShell>(typeof(ElectronShells));
+        public static IEnumerable<Element> Elements { get; } = GetAll<Element>(typeof(CommonElements));
+        public static IEnumerable<ElementType> ElementTypes { get; } = GetAll<ElementType>(typeof(ElementTypes));
+        public static IEnumerable<PeriodicTableElement> PeriodicTableElements { get; } = GetAll<PeriodicTableElement>(typeof(PeriodicTable));
+        public static IEnumerable<PeriodicTableGroup> PeriodicTableGroups { get; } = GetAll<PeriodicTableGroup>(typeof(PeriodicTableGroups));
+        public static IEnumerable<PhysicalState> PhysicalStates { get; } = GetAll<PhysicalState>(typeof(PhysicalStates));
+        public static IEnumerable<ElementStructure> ElementStructures { get; } = GetAll<ElementStructure>(typeof(ElementStructures));
+        public static IEnumerable<Isotope> Isotopes { get; } = GetAll<Isotope>(typeof(CommonIsotopes)); 
+        public static IEnumerable<ChemicalCompound> CommonCompounds { get; } = GetAll<ChemicalCompound>(typeof(CommonCompounds));
+        public static IEnumerable<Ion> Ions { get; } = GetAll<Ion>(typeof(CommonIons));
 
-        public static IList<Isotope> MonoisotopicElements { get; } = new List<Isotope>
+        public static IEnumerable<Isotope> MonoisotopicElements { get; } = new List<Isotope>
         {
             CommonIsotopes.Be9, CommonIsotopes.F19, CommonIsotopes.Na23, CommonIsotopes.Al27, CommonIsotopes.P31, 
             CommonIsotopes.Sc45, CommonIsotopes.V51, CommonIsotopes.Mn55, CommonIsotopes.Co59, CommonIsotopes.As75, 
@@ -38,25 +41,25 @@ namespace Chemistry.NET.Common
             CommonIsotopes.I127, CommonIsotopes.Cs133, CommonIsotopes.La139, CommonIsotopes.Pr141, CommonIsotopes.Eu153, 
             CommonIsotopes.Tb159, CommonIsotopes.Ho165, CommonIsotopes.Tm169, CommonIsotopes.Lu175, CommonIsotopes.Re185, 
             CommonIsotopes.Au197
-        };
+        }.AsReadOnly();
 
-        public static IList<Isotope> MononuclidicElements { get; } = new List<Isotope>
+        public static IEnumerable<Isotope> MononuclidicElements { get; } = new List<Isotope>
         {
             CommonIsotopes.Be9, CommonIsotopes.F19, CommonIsotopes.Na23, CommonIsotopes.Al27, CommonIsotopes.P31,
             CommonIsotopes.Sc45, CommonIsotopes.Mn55, CommonIsotopes.Co59, CommonIsotopes.As75, CommonIsotopes.Y89,
             CommonIsotopes.Nb93, CommonIsotopes.Rh103, CommonIsotopes.I127, CommonIsotopes.Cs133, CommonIsotopes.Pr141,
             CommonIsotopes.Tb159, CommonIsotopes.Ho165, CommonIsotopes.Tm169, CommonIsotopes.Au197, CommonIsotopes.Bi209,
             CommonIsotopes.Pa231
-        };
+        }.AsReadOnly();
 
-        public static IList<Isotope> AlphaNuclides { get; } = new List<Isotope>
+        public static IEnumerable<Isotope> AlphaNuclides { get; } = new List<Isotope>
         {
             CommonIsotopes.He4, CommonIsotopes.Be8, CommonIsotopes.C12, CommonIsotopes.O16, CommonIsotopes.Ne20,
             CommonIsotopes.Mg24, CommonIsotopes.Si28, CommonIsotopes.S32, CommonIsotopes.Ar36, CommonIsotopes.Ca40, 
             CommonIsotopes.Ti44, CommonIsotopes.Cr48, CommonIsotopes.Fe52, CommonIsotopes.Ni56, CommonIsotopes.Zn60
-        };
+        }.AsReadOnly();
 
-        public static IList<Isotope> PrimordialNuclides { get; } = new List<Isotope>
+        public static IEnumerable<Isotope> PrimordialNuclides { get; } = new List<Isotope>
         {
             CommonIsotopes.Te128, CommonIsotopes.Xe124, CommonIsotopes.Kr78, CommonIsotopes.Xe136, CommonIsotopes.Ge76,
             CommonIsotopes.Ba130, CommonIsotopes.Se82, CommonIsotopes.Cd116, CommonIsotopes.Ca48, CommonIsotopes.Zr96,
@@ -65,13 +68,17 @@ namespace Chemistry.NET.Common
             CommonIsotopes.Os186, CommonIsotopes.Hf174, CommonIsotopes.In115, CommonIsotopes.Gd152, CommonIsotopes.Pt190,
             CommonIsotopes.Sm147, CommonIsotopes.La138, CommonIsotopes.Rb87, CommonIsotopes.Re187, CommonIsotopes.Lu176,
             CommonIsotopes.Th232, CommonIsotopes.U238, CommonIsotopes.K40, CommonIsotopes.U235
-        };
+        }.AsReadOnly();
         
         // --== Methods ==--
 
         private static IList<TModel> GetAll<TModel>(Type type)
         {
-            return type.GetProperties().Select(obj => (TModel) obj.GetValue(null)).ToList();
+            return type
+                .GetProperties()
+                .Select(obj => (TModel) obj.GetValue(null))
+                .ToList()
+                .AsReadOnly();
         }
     }
 }
