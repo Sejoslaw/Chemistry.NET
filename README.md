@@ -67,6 +67,7 @@ Project Name | Description
 [Chemistry.NET.Tests](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Chemistry.NET.Tests) | Tests for core library
 [Chemistry.NET.Tools.Common](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Chemistry.NET.Tools.Common) | Common library for all tools
 [Tools](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools) | A collection of tools used to make life easier
+[Chemistry.NET.Tools.CHeaderGenerator](https://github.com/Sejoslaw/Chemistry.NET/tree/master/Tools/Chemistry.NET.Tools.CHeaderGenerator) | Worth to mension tool which generates C single-header file with data from C# library. You can check it's raw version [here](https://raw.githubusercontent.com/Sejoslaw/Chemistry.NET/master/Tools/Chemistry.NET.Tools.CHeaderGenerator/Chemistry.NET.h).
 
 </br>
 
