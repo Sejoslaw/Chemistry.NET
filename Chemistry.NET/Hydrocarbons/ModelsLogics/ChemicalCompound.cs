@@ -44,16 +44,23 @@ namespace Chemistry.NET.Compounds.Models
         public bool IsSaturated => IsAlkane || IsCycloalkane; // TODO: Add check for IsAlkadiene when we will support counting number of bonds 
         public bool IsUnsaturated => IsAlkene || IsAlkyne;
 
-        public virtual bool IsValidHydrocarbon(Func<int, int, bool> func)
+        protected virtual bool IsValidHydrocarbon(Func<int, int, bool> func)
         {
-            var atoms = GetAtoms();
-            var carbonCount = atoms.First(e => e.Element == CommonElements.Carbon).Count;
-            var hydrogenCount = atoms.First(e => e.Element == CommonElements.Hydrogen).Count;
+            try
+            {
+                var atoms = GetAtoms();
+                var carbonCount = atoms.First(e => e.Element == CommonElements.Carbon).Count;
+                var hydrogenCount = atoms.First(e => e.Element == CommonElements.Hydrogen).Count;
 
-            return func(carbonCount, hydrogenCount);
+                return func(carbonCount, hydrogenCount);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         
-        public static bool IsValidCycloalkane(int carbonCount, int hydrogenCount, int numberOfRings)
+        protected static bool IsValidCycloalkane(int carbonCount, int hydrogenCount, int numberOfRings)
         {
             return hydrogenCount == 2 * (carbonCount + 1 - numberOfRings);
         }

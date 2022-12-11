@@ -22,7 +22,7 @@ namespace Chemistry.NET.Particles.Models
         public static Quark Top { get; } = new Quark("Top", "t", 173.1 * GeV, 2.0 / 3.0, 1.0 / 2.0, 3, 1.0 / 2.0, 1.0 / 3.0, 0, 0, 0, 1, 0);
         public static Quark Bottom { get; } = new Quark("Bottom", "b", 4.18 * GeV, -(1.0 / 3.0), 1.0 / 2.0, 3, 1.0 / 2.0, 1.0 / 3.0, 0, 0, 0, 0, -1);
 
-        // Antiquark
+        // AntiQuark
 
         public static AntiQuark AntiUp { get; } = new AntiQuark("Anti Up", "u", 2.2 * MeV, -(2.0 / 3.0), 1.0 / 2.0, 1, 1.0 / 2.0, 1.0 / 3.0, 1.0 / 2.0, 0, 0, 0, 0);
         public static AntiQuark AntiDown { get; } = new AntiQuark("Anti Down", "d", 4.7 * MeV, 1.0 / 3.0, 1.0 / 2.0, 1, 1.0 / 2.0, 1.0 / 3.0, -(1.0 / 2.0), 0, 0, 0, 0);
